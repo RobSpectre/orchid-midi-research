@@ -1,4 +1,4 @@
-# Python CLI reference (0.3.0)
+# Python CLI reference (0.3.1)
 
 Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchid-midi` executable on macOS, Linux and Windows. CLI stdout is JSON/JSONL; errors are JSON on stderr and exit 2. Interrupted operations exit 130. Arguments are validated before MIDI access. Read-only help, parameters, capabilities and dry runs need no device or backend import.
 
@@ -10,6 +10,8 @@ Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchi
 | `configure`, `config` | Save/show endpoint, API and timing preferences | Host file only |
 | `capabilities` | Machine-readable supported/unresolved operations | Research summary |
 | `presets sound` / `names sound` | Explicit name/slot mappings; also `bass`, `perform`, `fx1`, `fx2`, `all` | Firmware initializer and frontend |
+| `perform-options` | List factory preset donors and stored Perform mode/amount | Offline; [workaround limits](perform.md) |
+| `perform-preset DONOR --timbre FACTORY_SOUND` | Recall donor, optionally apply another factory timbre; `--timbre` is optional | Neighbour/Pulsar hardware-confirmed; changes Sound slot/name |
 | `parameters --engine sound` | All names, indices, ranges, defaults and enum labels; `--filter FX` narrows output | Hash-locked Pistil table |
 | `identity` | Manufacturer/version reply; reports whether researched identity matches | Hardware-tested |
 | `status` | Identity, Sound/Bass preset/name, chord/bass voicing | Not a complete state dump |
@@ -49,7 +51,7 @@ Sound (`sound` or `treble`, engine0) and Bass (engine1) each expose indices0–1
 - FX1 and FX2 type plus six parameters each; reverb send, size, low-pass and high-pass.
 - Reed Piano pickup height/distance/tracking/type, decay/release/tone, velocity curve, clank/curve/tracking, tremolo/rate, voice volume, hammer, key-off and stereo.
 
-`parameters --filter FX` or `parameters --filter RP` provides the exact names. Full names such as `BASS_CUTOFF` are accepted only when their prefix matches the selected engine. Numeric indices are also accepted and enforce the same table ranges, including the second index byte for indices128–134.
+[The complete parameter reference](parameters.md) lists every entry, range and enum. `parameters` (alias `catalog`) provides the same runtime catalog; `parameters --filter FX` or `parameters --filter RP` narrows it. Full names such as `BASS_CUTOFF` are accepted only when their prefix matches the selected engine. Numeric indices are also accepted and enforce the same table ranges, including the second index byte for indices128–134.
 
 Raw MIDI integers are the default. Recognized enum strings (e.g. `LOWPASS`, `PHASER`, `REED PIANO`) also work. Numeric enum labels are explicit: FMALG raw0 is displayed algorithm1, so use `0` or `label:1`. Do not translate semitone/pan values without checking their centered raw encoding; many have center64.
 

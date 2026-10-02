@@ -20,6 +20,10 @@ orchid-midi identity
 
 The backend is python-rtmidi: CoreMIDI on macOS, ALSA/JACK on Linux, WinMM on Windows. One matching Orchid endpoint is detected automatically. If multiple ports match, use the exact names or indices returned by `ports`; save them once with `configure --input ... --output ...`. Fix installation/permissions/port selection errors in this CLI instead of falling back to OS shell MIDI tools.
 
+## Choose the right route
+
+Read [task routing and coverage](references/coverage.md) to match the request to an implemented command and see the remaining gaps. This skill covers the researched remote interface, not every physical device function. Use [the complete parameter reference](references/parameters.md) for names, raw ranges and enum choices without reverse engineering. Read only the references relevant to the task; firmware analysis is not part of ordinary operation.
+
 ## Select by name
 
 Read [the explicit name mappings](references/names.md) for all 70 factory Sounds, 30 default user-slot labels, 12 Bass presets, Perform labels and FX types. Prefer names to integers: `orchid-midi sound "Ghost"`, `orchid-midi bass "Fuzzy"`. `orchid-midi presets sound` (or `names sound`) lists the bundled mapping without accessing the device. Name selection also works in JSON profiles. Perform table indices are not MIDI commands; use the preset-recall workflow below for known combinations.

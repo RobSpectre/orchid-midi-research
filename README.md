@@ -42,7 +42,7 @@ Copy the full [`skills/orchid-midi`](skills/orchid-midi) folder into any harness
 
 The [explicit name map](skills/orchid-midi/references/names.md) lists every factory Sound, Bass, Perform and FX label. Run `orchid-midi presets` to inspect the same machine-readable catalog.
 
-The [CLI reference](skills/orchid-midi/references/cli.md) documents every command and the configuration schema. [The evidence index](skills/orchid-midi/references/evidence-index.md) links original captures and firmware/Pistil traces.
+The [task coverage guide](skills/orchid-midi/references/coverage.md) separates ready-to-use routes from unresolved device functions. The [complete parameter reference](skills/orchid-midi/references/parameters.md) lists every named parameter, raw range and enum. The [CLI reference](skills/orchid-midi/references/cli.md) documents every command and the configuration schema. [The evidence index](skills/orchid-midi/references/evidence-index.md) links original captures and firmware/Pistil traces.
 
 ## Offline verification and packaging
 
