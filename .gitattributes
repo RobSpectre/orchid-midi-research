@@ -1,0 +1,7 @@
+# Preserve original research evidence byte-for-byte.
+skills/orchid-midi/captures/** -text -whitespace
+skills/orchid-midi/research/*.asm -text -whitespace linguist-generated=true
+skills/orchid-midi/research/*.js -text -whitespace linguist-vendored=true
+skills/orchid-midi/research/*.html -text -whitespace linguist-vendored=true
+skills/orchid-midi/research/*.bin binary
+skills/orchid-midi/research/*.blob binary

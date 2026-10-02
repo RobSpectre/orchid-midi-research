@@ -1,0 +1,4 @@
+# Optional offline disassembly. Live MIDI and protocol tests use the stdlib.
+capstone==5.0.9
+# Optional offline emulator only; never a hardware-safety certification.
+unicorn==2.1.4

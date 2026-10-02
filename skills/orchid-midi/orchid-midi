@@ -1,0 +1,6 @@
+#!/bin/sh
+# Python 3.10+; ORCHID_PYTHON can select a virtual environment or bundled runtime.
+set -eu
+task_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+runtime_python="${ORCHID_PYTHON:-python3}"
+exec "$runtime_python" "$task_dir/research/orchid_midi.py" "$@"

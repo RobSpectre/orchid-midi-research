@@ -1,0 +1,142 @@
+{
+  "capture": "physical-buttons-round2-2026-10-01.jsonl",
+  "loop_navigation": {
+    "user_report": "Pressed Loop, scrolled 16 bars, 8 bars, 4 bars, 2 bars, 1 bar, Free, Exit.",
+    "observed_transport": [
+      "fa",
+      "fa",
+      "fa",
+      "fc",
+      "fa",
+      "fc"
+    ],
+    "caveat": "No per-action timestamps were supplied, so individual menu choices are not assigned to packets."
+  },
+  "bpm_button": {
+    "user_report": "Two BPM presses turned drums on then off.",
+    "observed": [
+      {
+        "utc": "2026-10-01T21:46:11.699633+00:00",
+        "hex": "fc fa"
+      },
+      {
+        "utc": "2026-10-01T21:46:15.070984+00:00",
+        "hex": "fc fa"
+      }
+    ],
+    "other_messages": "MIDI clock only; no additional CC or SysEx in this capture window.",
+    "replay": {
+      "capture": "probe-bpm-press-round2-2026-10-01.jsonl",
+      "hex": "fc fa",
+      "user_result": "Drums remained silent.",
+      "conclusion": "Observed outgoing BPM-button pair does not reproduce the toggle when replayed to Orchid."
+    }
+  },
+  "status": "Awaiting physical drum-off baseline before exact beat-selection packet replay.",
+  "usb_interface_check": {
+    "source": "ioreg -r -n Orchid -l -w 0",
+    "configuration_count": 1,
+    "current_configuration": 1,
+    "interfaces": [
+      {
+        "number": 0,
+        "class": 1,
+        "subclass": 1,
+        "endpoints": 0,
+        "meaning": "USB AudioControl"
+      },
+      {
+        "number": 1,
+        "class": 1,
+        "subclass": 3,
+        "endpoints": 2,
+        "meaning": "USB MIDIStreaming"
+      }
+    ],
+    "conclusion": "No separate HID, serial, or vendor-class interface is exposed in the current USB configuration. This does not rule out vendor requests on the standard control endpoint or vendor messages within MIDI."
+  },
+  "start_with_clock": {
+    "capture": "probe-start-clock-2026-10-01.jsonl",
+    "bpm": 87,
+    "clock_ticks": 720,
+    "play_window_seconds": 20,
+    "sequence": "24 pre-roll clock ticks, Start, 696 clock ticks, Stop",
+    "user_result": "Drums did not play at any point.",
+    "scope": "Normal USB MIDI input; no external-sync setting changed."
+  },
+  "continue_with_clock": {
+    "capture": "probe-continue-clock-2026-10-01.jsonl",
+    "bpm": 87,
+    "clock_ticks": 720,
+    "play_window_seconds": 20,
+    "sequence": "24 pre-roll clock ticks, Continue, 696 clock ticks, Stop",
+    "user_result": "Drums did not play at any point."
+  },
+  "independent_output_capture": {
+    "mmon": "transport-clock-tests-2026-10-01.mmon",
+    "decoded": "transport-clock-tests-2026-10-01.jsonl",
+    "clock_ticks_to_orchid": 1440,
+    "transports_verified": [
+      "Start",
+      "Stop",
+      "Continue",
+      "Stop"
+    ]
+  },
+  "mmc_playback": {
+    "capture": "probe-mmc-playback-2026-10-01.jsonl",
+    "independent_capture": "transport-all-tests-2026-10-01.mmon",
+    "play": "f0 7f 7f 06 02 f7",
+    "deferred_play": "f0 7f 7f 06 03 f7",
+    "stop": "f0 7f 7f 06 01 f7",
+    "device_id": "broadcast 0x7f",
+    "play_window_seconds_each": 10,
+    "user_result": "No drums heard during either playback test.",
+    "reference": "https://cdn.roland.com/assets/media/pdf/FC-200_OM.pdf"
+  },
+  "connection_check_after_transport_tests": {
+    "capture": "transport-tests-identity-after-2026-10-01.jsonl",
+    "identity_reply": "f0 7e 7f 06 02 00 22 0c 01 01 00 00 33 2e 09 02 f7",
+    "result": "Device replied over the same CoreMIDI endpoint after the tests."
+  },
+  "beat_menu": {
+    "capture": "beat-selection-2026-10-01.jsonl",
+    "user_report": "Press and hold BPM opens the menu; nothing is selected.",
+    "firmware_labels": [
+      "2/4",
+      "3/4",
+      "4/4",
+      "6/8",
+      "Saint Germain",
+      "Orchid Bossanova",
+      "Trap",
+      "Disco",
+      "Old Skool",
+      "Techno",
+      "Latin",
+      "Millionaire",
+      "Bronson",
+      "North Soul",
+      "Back Beat",
+      "Apartment"
+    ],
+    "baseline_note": "User did not see an active/selected beat in the menu; previous beat identity remains unknown.",
+    "disco_selection": {
+      "user_result": "Selecting Disco starts audible rhythm.",
+      "utc": "2026-10-01T21:59:45.590646+00:00",
+      "hex": "fc b0 70 57 fa",
+      "decoded": [
+        "Stop",
+        "Channel 1 CC 112 value 87",
+        "Start"
+      ],
+      "no_beat_id_observed": true
+    }
+  },
+  "drum_stop": {
+    "capture": "probe-drum-stop-2026-10-01.jsonl",
+    "hex": "fc",
+    "initial_state": "Disco beat playing",
+    "user_result": "Drums did not stop."
+  }
+}

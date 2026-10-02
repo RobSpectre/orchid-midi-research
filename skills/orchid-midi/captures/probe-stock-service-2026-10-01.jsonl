@@ -1,0 +1,19 @@
+{"utc": "2026-10-01T22:49:32.149466+00:00", "event": "endpoint", "kind": "Source", "ref": 46145556, "name": "Orchid"}
+{"utc": "2026-10-01T22:49:32.149766+00:00", "event": "endpoint", "kind": "Destination", "ref": 46145557, "name": "Orchid"}
+{"utc": "2026-10-01T22:49:32.355377+00:00", "event": "sent", "direction": "mac-to-orchid", "hex": "f0 7e 7f 06 01 f7"}
+{"utc": "2026-10-01T22:49:32.410593+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443415305012, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.410821+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443415983795, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.410893+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443416664151, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.410929+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443417342978, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.410957+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443418032177, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.411076+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443418711033, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.411125+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443419389371, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.411150+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443420077211, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.411172+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443420114431, "hex": "f0 7e 7f 06 02 00 22 0c 01 01 00 00 33 2e 09 02 f7"}
+{"utc": "2026-10-01T22:49:32.411194+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443420756477, "hex": "f8"}
+{"utc": "2026-10-01T22:49:32.411214+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443421165815, "hex": "80 37 00 90 3b 3e"}
+{"utc": "2026-10-01T22:49:32.411236+00:00", "event": "firmware_identity_verified", "firmware": "3.92", "probe": "existing stock function returns 3; no uploaded code"}
+{"utc": "2026-10-01T22:49:32.411414+00:00", "event": "sent", "direction": "mac-to-orchid", "hex": "f0 00 22 0c 01 7f 73 00 00 00 00 4e 02 01 04 7f 57 6f 25 60 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 f7"}
+{"utc": "2026-10-01T22:49:32.411451+00:00", "event": "listening", "seconds": 5.0}
+{"utc": "2026-10-01T22:49:32.463512+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 443421435220, "hex": "f8"}
+{"utc": "2026-10-01T22:49:37.415115+00:00", "event": "finished"}

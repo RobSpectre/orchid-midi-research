@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-01",
+  "status": "FX capture round complete; further encoder testing paused at user request",
+  "hardware_baseline_source": "User read the physical Orchid display during this session",
+  "hardware_baseline": {
+    "firmware": "v3.9.2",
+    "sound_preset": "01",
+    "reverb": "03",
+    "fx1_type": "Phaser",
+    "fx1_value": "01",
+    "fx2_type": "Chorus",
+    "fx2_value": "Off",
+    "filter": "127"
+  },
+  "ui_observations": [
+    "Pistil 1.0.2 opened in Bass mode showing FUZZY 008; this is not synchronized with the previously restored hardware Bass 07.",
+    "Expanded Bass view exposes oscillators, envelopes, LFOs, modulation, reverb, FX1, FX2, noise, filter and keyboard synth parameters.",
+    "No independent Perform, Key, Loop, BPM or master Volume control was identified in the inspected views.",
+    "Native Options popup could not be read through the available computer-control output.",
+    "Connection panel shows Orchid firmware V dash, refresh, and Direct MIDI Bridge disconnected (disabled in standalone), with disabled input/output selectors.",
+    "Closing connection panel, collapsing advanced view and selecting Treble was attempted in a batch, but the tool timed out; final UI state is unverified.",
+    "Further calls for both Pistil and MIDI Monitor timed out. No FX slider or knob was intentionally manipulated during this follow-up."
+  ],
+  "frontend_mapping_observations": {
+    "source": "research/pistil-embedded.js",
+    "reverb": "Mode-prefixed REVSEND",
+    "filter": "Mode-prefixed CUTOFF; FTYPE controls filter type",
+    "fx_amount": "Mode-prefixed FXnP2 for most types; FXnP1 when decoded effect type equals 6",
+    "edit_bridge": "orchidParamEdited event with id and normalized value",
+    "validation": "Static frontend inspection only; no new MIDI or physical-device validation yet"
+  },
+  "next_step": "When user returns with Orchid, resume investigation of remaining encoders; no further device commands until then.",
+  "filter_capture": {
+    "archive": "captures/pistil-filter-2026-10-01.mmon",
+    "decoded": "captures/pistil-filter-2026-10-01.jsonl",
+    "new_events": 490,
+    "all_target_same_parameter": true,
+    "all_checksums_valid": true,
+    "command_hex": "47",
+    "engine": 0,
+    "parameter_index": 68,
+    "first_raw_value": 127,
+    "final_raw_value": 25,
+    "final_packet": "f0 00 22 0c 01 47 00 44 00 19 2d f7",
+    "user_reported_value": 25,
+    "user_reported_value_source": "User said moved Filter to 25 after instructions to read Orchid; no independent readback available"
+  },
+  "filter_direct_restore": {
+    "raw_value": 127,
+    "packet": "f0 00 22 0c 01 47 00 44 00 7f 47 f7",
+    "send_succeeded": true,
+    "hardware_confirmation": "User confirmed physical device shows 127",
+    "log": "captures/direct-filter-restore-2026-10-01.jsonl"
+  },
+  "phaser_capture": {
+    "archive": "captures/pistil-phaser-2026-10-01.mmon",
+    "decoded": "captures/pistil-phaser-2026-10-01.jsonl",
+    "phaser_events": 101,
+    "other_events": "One preceding Filter restore packet from our sender, independently captured by MIDI Monitor",
+    "command_hex": "47",
+    "engine": 0,
+    "parameter_index": 102,
+    "final_raw_value": 63,
+    "pistil_percent": 49,
+    "hardware_display_user_confirmed": "05",
+    "final_packet": "f0 00 22 0c 01 47 00 66 00 3f 65 f7",
+    "all_checksums_valid": true
+  },
+  "phaser_direct_restore": {
+    "raw_value": 13,
+    "packet": "f0 00 22 0c 01 47 00 66 00 0d 17 f7",
+    "send_succeeded": true,
+    "hardware_confirmation": "User confirmed physical Phaser display 01",
+    "target_display": "01",
+    "exact_original_raw_value_known": false,
+    "log": "captures/direct-phaser-restore-2026-10-01.jsonl"
+  },
+  "chorus_capture": {
+    "archive": "captures/pistil-chorus-2026-10-01.mmon",
+    "decoded": "captures/pistil-chorus-2026-10-01.jsonl",
+    "chorus_events": 80,
+    "other_events": "One preceding Phaser restore packet from our sender, independently captured by MIDI Monitor",
+    "command_hex": "47",
+    "engine": 0,
+    "parameter_index": 109,
+    "final_raw_value": 64,
+    "pistil_percent": 50,
+    "hardware_display_user_confirmed": "05",
+    "final_packet": "f0 00 22 0c 01 47 00 6d 00 40 5d f7",
+    "effect_type_write_captured": false,
+    "all_checksums_valid": true
+  },
+  "chorus_direct_restore": {
+    "raw_value": 0,
+    "packet": "f0 00 22 0c 01 47 00 6d 00 00 1d f7",
+    "send_succeeded": true,
+    "hardware_confirmation": "User confirmed physical Chorus display Off",
+    "target_display": "Off",
+    "log": "captures/direct-chorus-restore-2026-10-01.jsonl"
+  },
+  "commands": {
+    "reverb": "./orchid-midi reverb VALUE",
+    "filter": "./orchid-midi filter VALUE",
+    "phaser": "./orchid-midi phaser VALUE",
+    "chorus": "./orchid-midi chorus VALUE",
+    "value_units": "Raw integer 0..127, not Pistil percent or Orchid display steps",
+    "scope": "Sound/treble engine only; Phaser must already be selected in FX1 and Chorus in FX2; these commands do not set effect type",
+    "dry_run": "Append --dry-run to print bytes without opening MIDI"
+  },
+  "validation": "6 unittest cases passed, with captured Filter, Phaser, and Chorus packet fixtures added",
+  "last_confirmed_restorations": {
+    "filter": 127,
+    "phaser_display": "01",
+    "chorus_display": "Off",
+    "note": "Confirmed sequentially by user after each direct restore; other parameters were not independently rechecked at end."
+  }
+}

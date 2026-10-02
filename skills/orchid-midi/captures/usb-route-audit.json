@@ -1,0 +1,158 @@
+{
+  "firmware_sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f",
+  "hardware_access": false,
+  "initialized_data_copy": {
+    "flash_source": "0x808f3cc",
+    "ram_start": "0x24000000",
+    "ram_end": "0x24003e04"
+  },
+  "midi_configuration": {
+    "runtime_address": "0x804b0ac",
+    "total_bytes": 101,
+    "configuration_value": 1,
+    "interfaces": [
+      {
+        "number": 0,
+        "alternate": 0,
+        "endpoint_count": 0,
+        "class": 1,
+        "subclass": 1,
+        "protocol": 0,
+        "endpoints": []
+      },
+      {
+        "number": 1,
+        "alternate": 0,
+        "endpoint_count": 2,
+        "class": 1,
+        "subclass": 3,
+        "protocol": 0,
+        "endpoints": [
+          {
+            "address": "0x1",
+            "transfer_type": 2,
+            "max_packet_bytes": 64
+          },
+          {
+            "address": "0x81",
+            "transfer_type": 2,
+            "max_packet_bytes": 64
+          }
+        ]
+      }
+    ]
+  },
+  "cdc_configuration": {
+    "runtime_address": "0x24000008",
+    "total_bytes": 67,
+    "configuration_value": 1,
+    "interfaces": [
+      {
+        "number": 0,
+        "alternate": 0,
+        "endpoint_count": 1,
+        "class": 2,
+        "subclass": 2,
+        "protocol": 1,
+        "endpoints": [
+          {
+            "address": "0x82",
+            "transfer_type": 3,
+            "max_packet_bytes": 8
+          }
+        ]
+      },
+      {
+        "number": 1,
+        "alternate": 0,
+        "endpoint_count": 2,
+        "class": 10,
+        "subclass": 0,
+        "protocol": 0,
+        "endpoints": [
+          {
+            "address": "0x1",
+            "transfer_type": 2,
+            "max_packet_bytes": 64
+          },
+          {
+            "address": "0x81",
+            "transfer_type": 2,
+            "max_packet_bytes": 64
+          }
+        ]
+      }
+    ]
+  },
+  "mode_initializer": {
+    "address": "0x0802ee14",
+    "mode_byte": "0x38001051",
+    "mode_0": "MIDI",
+    "mode_1": "CDC serial",
+    "direct_callers": [
+      {
+        "address": "0x802f158",
+        "preceding_instructions": [
+          "0x802f14c: asrs r4, r4, #0x1e",
+          "0x802f14e: subs r0, #0",
+          "0x802f150: movs r0, #0",
+          "0x802f152: ldr r3, [pc, #8]",
+          "0x802f154: str.w r0, [r3, #0x80]",
+          "0x802f158: b.w #0x802ee14"
+        ]
+      },
+      {
+        "address": "0x803f9c2",
+        "preceding_instructions": [
+          "0x803f9b2: str r3, [r0, #0x14]",
+          "0x803f9b4: dsb sy",
+          "0x803f9b8: isb sy",
+          "0x803f9bc: bl #0x803f7c8",
+          "0x803f9c0: movs r0, #0",
+          "0x803f9c2: bl #0x802ee14"
+        ]
+      }
+    ],
+    "stored_function_pointer_occurrences": []
+  },
+  "cdc_receive": {
+    "callback": "0x08030610",
+    "write_index": "0x380035ac",
+    "buffer": "0x380035b0",
+    "direct_literal_references": [
+      {
+        "instruction": "0x8030614",
+        "target": "0x380035ac"
+      },
+      {
+        "instruction": "0x8030624",
+        "target": "0x380035b0"
+      }
+    ],
+    "behavior": "Copies bytes to a wrapping receive buffer and rearms USB reception; no command parsing in the callback.",
+    "consumer_found": false
+  },
+  "usb_control_requests": {
+    "active_midi_setup_callback": null,
+    "inactive_cdc_setup_callback": "0x080301d4",
+    "device_request_class_or_vendor_path": "0x0802f964 forwards to class Setup callback without a null check.",
+    "interface_request_path": "0x0802fcce checks the null Setup callback and returns status 3.",
+    "conclusion": "No separate vendor-control command handler is installed by the active MIDI class. Blind device-recipient vendor requests could fault at the null callback and were not sent."
+  },
+  "maintenance_route": {
+    "transport": "Vendor SysEx over USB MIDI",
+    "command": "0x73 in the 0x7f envelope",
+    "input_unpack_buffer": "0x2404fc04",
+    "unpacked_bytes": 133,
+    "behavior": "Checks a marker, calls the function address in the unpacked payload, and returns a byte.",
+    "offline_probe": "maintenance-probe-offline.json",
+    "live_probe_sent": false,
+    "conclusion": "A distinct stock maintenance execution mechanism exists; it is not a discovered normal encoder command."
+  },
+  "conclusion": "CDC support exists but normal initialization chooses MIDI. No reachable CDC command consumer or active non-MIDI USB control API was established. A bounded stock-function diagnostic through the MIDI maintenance path succeeds in offline emulation.",
+  "limitations": [
+    "Firmware is a public image matching the reported version, not a dump of device flash.",
+    "Direct calls, literal references and callback tables were traced; computed pointers or aliases are not exhaustively proven absent.",
+    "No device re-enumeration, vendor request, or maintenance command was transmitted."
+  ]
+}

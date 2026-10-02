@@ -1,0 +1,62 @@
+{
+  "firmware_sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f",
+  "hardware_access": false,
+  "uploaded_code": false,
+  "stock_probe_function": {
+    "address": "0x803049c",
+    "instructions": [
+      "movs r0, #3",
+      "bx lr"
+    ]
+  },
+  "packet_bytes": 165,
+  "packet_hex_for_review_only": "f0 00 22 0c 01 7f 73 00 00 00 00 4e 02 01 04 7f 57 6f 25 60 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 f7",
+  "valid_probe": {
+    "handler_returned": true,
+    "responses": [
+      "f0 00 22 0c 01 78 03 f7"
+    ],
+    "probe_instructions": [
+      {
+        "address": "0x803049c",
+        "hex": "03 20"
+      },
+      {
+        "address": "0x803049e",
+        "hex": "70 47"
+      }
+    ],
+    "stock_indirect_call_reached": true,
+    "flash_program_path_reached": false,
+    "memory_write_count": 147,
+    "writes_confined_to_stack_and_sysex_buffers": true
+  },
+  "invalid_gate": {
+    "handler_returned": true,
+    "responses": [
+      "f0 00 22 0c 01 78 02 f7"
+    ],
+    "probe_instructions": [],
+    "stock_indirect_call_reached": false,
+    "flash_program_path_reached": false,
+    "memory_write_count": 147,
+    "writes_confined_to_stack_and_sysex_buffers": true
+  },
+  "invalid_checksum": {
+    "handler_returned": true,
+    "responses": [
+      "f0 00 22 0c 01 78 01 f7"
+    ],
+    "probe_instructions": [],
+    "stock_indirect_call_reached": false,
+    "flash_program_path_reached": false,
+    "memory_write_count": 12,
+    "writes_confined_to_stack_and_sysex_buffers": true
+  },
+  "limitations": [
+    "The physical USB boundary and outgoing MIDI sender are mocked.",
+    "The emulator does not reproduce Orchid's live MPU, caches, interrupt activity, or all hardware state.",
+    "No packet has been sent to the device; a live test could still fault and require a power cycle.",
+    "Returning a constant establishes no encoder or transport control by itself."
+  ]
+}

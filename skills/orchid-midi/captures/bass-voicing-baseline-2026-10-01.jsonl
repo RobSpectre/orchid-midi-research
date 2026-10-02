@@ -1,0 +1,6 @@
+{"utc": "2026-10-01T20:28:22.403916+00:00", "event": "endpoint", "kind": "Source", "ref": 46145556, "name": "Orchid"}
+{"utc": "2026-10-01T20:28:22.404321+00:00", "event": "endpoint", "kind": "Destination", "ref": 46145557, "name": "Orchid"}
+{"utc": "2026-10-01T20:28:22.607734+00:00", "event": "sent", "direction": "mac-to-orchid", "hex": "f0 00 22 0c 01 55 7c f7"}
+{"utc": "2026-10-01T20:28:22.608016+00:00", "event": "listening", "seconds": 2.0}
+{"utc": "2026-10-01T20:28:22.662337+00:00", "event": "packet", "direction": "orchid-to-mac", "host_timestamp": 240147218433, "hex": "f0 00 22 0c 01 7e 55 17 f7"}
+{"utc": "2026-10-01T20:28:24.610327+00:00", "event": "finished"}

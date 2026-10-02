@@ -1,0 +1,21 @@
+{
+  "interfaces": [
+    {
+      "bInterfaceProtocol": 0,
+      "bAlternateSetting": 0,
+      "bInterfaceClass": 1,
+      "bInterfaceSubClass": 1,
+      "bInterfaceNumber": 0,
+      "bNumEndpoints": 0
+    },
+    {
+      "bInterfaceProtocol": 0,
+      "bAlternateSetting": 0,
+      "bInterfaceClass": 1,
+      "bInterfaceSubClass": 3,
+      "bInterfaceNumber": 1,
+      "bNumEndpoints": 2
+    }
+  ],
+  "source": "ioreg -r -n Orchid -l -w 0"
+}

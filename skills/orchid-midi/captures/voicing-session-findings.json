@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-01",
+  "status": "Chord and bass voicing verified on physical device and restored with MIDI readback; Pistil model-volume comparison complete",
+  "computer_use": "Recovered after user quit and reopened Pistil; MIDI Monitor operated and saved by assistant",
+  "attention_sound": "/System/Library/Sounds/Glass.aiff; user confirmed audible",
+  "device_identity_reply": "f0 7e 7f 06 02 00 22 0c 01 01 00 00 33 2e 09 02 f7",
+  "baseline": {
+    "chord_voicing_raw": 24,
+    "bass_voicing_raw": 23,
+    "chord_query": "f0 00 22 0c 01 52 7f f7",
+    "chord_reply": "f0 00 22 0c 01 7e 52 18 f7",
+    "bass_query": "f0 00 22 0c 01 55 7c f7",
+    "bass_reply": "f0 00 22 0c 01 7e 55 17 f7",
+    "physical_display_confirmation": {
+      "master_volume": 99,
+      "chord": "second octave highlighted",
+      "bass": "first octave highlighted"
+    }
+  },
+  "candidate_setters": {
+    "chord": "command 45, absolute 1..60",
+    "bass": "command 46, absolute 0..48",
+    "live_tested": true
+  },
+  "device_state_writes_sent_this_round": [
+    "chord36",
+    "chord24",
+    "bass35",
+    "Pistil RPVOL48",
+    "Pistil RPVOL36",
+    "Pistil RPVOL22",
+    "Pistil RPVOL48 restored",
+    "bass23 restored"
+  ],
+  "limitations": [
+    "No independent Perform, Key, Loop, BPM, Options, or master Volume controls identified in inspected Pistil views or normal stock receiver commands.",
+    "Pistil RPVOL slider was tested at raw48 then22 then48; physical master Volume stayed99. Exact hardware model-gain value before the initial slider click was not read back.",
+    "Native Options popup was not visible in computer-control output.",
+    "No firmware modification, preset-slot save or maintenance memory command was sent."
+  ],
+  "next_step": "No further live writes pending. Investigate remaining independent panel controls only with new protocol or firmware evidence; no normal setters identified for Perform, Key, Loop, BPM, Options or master Volume.",
+  "tests": "8 unittest cases passed",
+  "chord_test": {
+    "sent_raw": 36,
+    "sent_packet": "f0 00 22 0c 01 45 24 68 f7",
+    "ack": "f0 00 22 0c 01 7e 45 24 f7",
+    "query_reply": "f0 00 22 0c 01 7e 52 24 f7",
+    "physical_confirmation": "User confirmed third octave highlighted",
+    "restore_raw": 24,
+    "restore_packet": "f0 00 22 0c 01 45 18 74 f7",
+    "restored_readback": 24
+  },
+  "bass_test": {
+    "sent_raw": 35,
+    "sent_packet": "f0 00 22 0c 01 46 23 68 f7",
+    "ack": "f0 00 22 0c 01 7e 46 23 f7",
+    "query_reply": "f0 00 22 0c 01 7e 55 23 f7",
+    "physical_confirmation": "User confirmed second octave highlighted",
+    "restore_target": 23,
+    "restore_raw": 23,
+    "restore_packet": "f0 00 22 0c 01 46 17 74 f7",
+    "restored_readback": 23
+  },
+  "pistil_volume_test": {
+    "parameter_index": 131,
+    "parameter_name": "RPVOL",
+    "initial_slider_interaction_sent_raw": 48,
+    "initial_exact_hardware_value_read_back": false,
+    "slider_changed_from_raw": 48,
+    "slider_changed_to_raw": 22,
+    "pistil_percent": 17,
+    "restore_target_raw": 48,
+    "hardware_master_volume_observation": "User confirmed master Volume remained 99 after slider lowered to 17%",
+    "note": "Initial click at existing thumb position emitted raw48 and marked preset edited; no separate pre-click exact raw readback was available.",
+    "restoration": {
+      "raw": 48,
+      "pistil_percent": 38,
+      "packet": "f0 00 22 0c 01 47 00 03 01 30 56 f7",
+      "verified_in_midi_monitor": true,
+      "hardware_parameter_readback": false
+    }
+  },
+  "commands": {
+    "chord": "./orchid-midi chord-voicing VALUE (absolute raw 1..60)",
+    "bass": "./orchid-midi bass-voicing VALUE (absolute raw 0..48)",
+    "read_chord": "./orchid-midi query-chord-voicing",
+    "read_bass": "./orchid-midi query-bass-voicing",
+    "restore_baseline": [
+      "./orchid-midi chord-voicing 24",
+      "./orchid-midi bass-voicing 23"
+    ],
+    "note": "Ranges come from static firmware bounds; live-tested chord 24/36 and bass 23/35."
+  }
+}

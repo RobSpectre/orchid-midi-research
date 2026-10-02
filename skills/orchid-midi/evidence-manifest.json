@@ -1,0 +1,520 @@
+{
+  "description": "SHA-256 of preserved research evidence. Historical captures were not rewritten.",
+  "files": [
+    {
+      "path": "captures/bass-voicing-baseline-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "e78c17b9d8045c151ca44bd62ce8e89e93b1b2f785ead9fc9f437b61cce41227"
+    },
+    {
+      "path": "captures/beat-selection-2026-10-01.jsonl",
+      "bytes": 3530548,
+      "sha256": "b602aa28ab1f49486ce82ba86ca55903225bf4e7bc6348ec346bab39321a29fb"
+    },
+    {
+      "path": "captures/chord-voicing-baseline-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "6917330d0fb3eae248b95e352148f886a1f57f6fccc80ab2891e818d86eef3d8"
+    },
+    {
+      "path": "captures/direct-bass-restore-2026-10-01.jsonl",
+      "bytes": 514,
+      "sha256": "4f772071f111ec2f3e390dfac98ee04528fb0d1627ad6a6ed45da397fd2d76d2"
+    },
+    {
+      "path": "captures/direct-bass-voicing-35-2026-10-01.jsonl",
+      "bytes": 822,
+      "sha256": "a1d347f6b69277cd00e55fb3115c014e87d1bc07119b2001555480c7a746cb7e"
+    },
+    {
+      "path": "captures/direct-chord-voicing-36-2026-10-01.jsonl",
+      "bytes": 822,
+      "sha256": "a55a1e1659b41292b225228b7709ece35901b8eb700e264b945488b809331e2a"
+    },
+    {
+      "path": "captures/direct-chorus-restore-2026-10-01.jsonl",
+      "bytes": 525,
+      "sha256": "4e630968720f0a4e1ff20abb51172596f7ec8f62ee45a42e573a2b27f8f8271c"
+    },
+    {
+      "path": "captures/direct-filter-restore-2026-10-01.jsonl",
+      "bytes": 525,
+      "sha256": "84b7a09e74ebc1695c4ee22bb0850906f440baebebdcaa4e52fe1e36b14574f8"
+    },
+    {
+      "path": "captures/direct-phaser-restore-2026-10-01.jsonl",
+      "bytes": 525,
+      "sha256": "18f6fa37fd6bde642b0843a3939861f783fcbef6a39a78ee690963b36c6d0b95"
+    },
+    {
+      "path": "captures/direct-reverb-38-2026-10-01.jsonl",
+      "bytes": 523,
+      "sha256": "14625fbad80d613b442301e5dff49b3afefe984eb8f9b30b062cdcb51f01da05"
+    },
+    {
+      "path": "captures/direct-reverb-restore-2026-10-01.jsonl",
+      "bytes": 523,
+      "sha256": "66e45b3d55c5e768005d0ac3b285d672b4153b4edcc72cab7e5cdcc00479b342"
+    },
+    {
+      "path": "captures/fx-live-baseline-2026-10-01.json",
+      "bytes": 5179,
+      "sha256": "17f5a1d7522ce134be329637fdbea6bea1961f8217fd45c13e3868bbefd53eb5"
+    },
+    {
+      "path": "captures/identity-2026-10-01.jsonl",
+      "bytes": 505,
+      "sha256": "6bad4ad31e012334692370e7eb3a3fce51a5769dd37e070be6c42f65ef883154"
+    },
+    {
+      "path": "captures/loop-recording-connection-check-2026-10-01.jsonl",
+      "bytes": 693,
+      "sha256": "8d35c9ba4e8f9c40aa2ccd80c7ba477b80f6a9b4937da6f03e8bc7ac791d5b63"
+    },
+    {
+      "path": "captures/mac-to-orchid.jsonl",
+      "bytes": 3967,
+      "sha256": "43d553d8580de9cded2129d8f1d0d0652287681b1a59d8f2ca74b404283aac9f"
+    },
+    {
+      "path": "captures/mac-to-orchid.mmon",
+      "bytes": 124938,
+      "sha256": "04c91f6aa92f355eb2c63f99834d9799c2a494ae0c4d4c15d1ff64cd1ec553eb"
+    },
+    {
+      "path": "captures/mac-to-orchid.syx",
+      "bytes": 116,
+      "sha256": "1bf4dd6f7b57c7383c9b40f1cd074e38074d2388c14edc1d95a3c600ff67bb98"
+    },
+    {
+      "path": "captures/maintenance-probe-live-incident.json",
+      "bytes": 740,
+      "sha256": "9c45b0e463ebe083345b333854654e99b88ec40c93daca02416a519496997839"
+    },
+    {
+      "path": "captures/maintenance-probe-offline.json",
+      "bytes": 2296,
+      "sha256": "df8f2246a60dea79bdc0d2c188735a3c0dcf83e227b7ec07868fabd776658b0a"
+    },
+    {
+      "path": "captures/orchid-to-mac.jsonl",
+      "bytes": 4224,
+      "sha256": "03836d84bbdd3a735d1dfc71d71429e229f34d0e14efcea6b0108cdc8c59ce14"
+    },
+    {
+      "path": "captures/orchid-to-mac.mmon",
+      "bytes": 20359045,
+      "sha256": "0795da824c55622d5ab27cfd359ef09d77050407c16dbe0d55a77d3a0c481e12"
+    },
+    {
+      "path": "captures/panel-five-continuation-2026-10-01.jsonl",
+      "bytes": 547547,
+      "sha256": "4e6c97b507add421d3933cac8a090286f41128315364035fff3a88b5b4587405"
+    },
+    {
+      "path": "captures/panel-five-final-2026-10-01.jsonl",
+      "bytes": 2249396,
+      "sha256": "409857062ce8a5e0c2abccae72c8b8734e6914e87123b03db5616a885bf378d7"
+    },
+    {
+      "path": "captures/panel-five-final-2026-10-01.mmon",
+      "bytes": 2512371,
+      "sha256": "0b3a4ae2b36f6133b0f015112b1809e31276a13f2461e4a55f6a24eb415e8c66"
+    },
+    {
+      "path": "captures/panel-five-findings.json",
+      "bytes": 11642,
+      "sha256": "1bcd8e958b0b8c3f9b3cda5bcdcf20ffc10e38f178e9ebb94d1856a777c40c3b"
+    },
+    {
+      "path": "captures/panel-five-live-2026-10-01.jsonl",
+      "bytes": 1201807,
+      "sha256": "b30cc434ef5c85d7f40121050949a591eb6ecaeca94b6aea39b186a31b835c8a"
+    },
+    {
+      "path": "captures/panel-five-through-loop-stop-2026-10-01.mmon",
+      "bytes": 2500825,
+      "sha256": "46a88262007a4e933659fe949bc631be01abcbcf286805159d2e0ebda065b522"
+    },
+    {
+      "path": "captures/panel-menu-connection-check-2026-10-01.jsonl",
+      "bytes": 693,
+      "sha256": "cd0f5b1dd69d2ea8bfc6d0435f626f088429de675d2ead6967f5a6e8aa186342"
+    },
+    {
+      "path": "captures/perform-key-replay-2026-10-01.mmon",
+      "bytes": 26695,
+      "sha256": "48c2615c41fbfc37db866f2cc26c8ff43c4670c8d982f4767b4e599d7b0d2a45"
+    },
+    {
+      "path": "captures/physical-buttons-round2-2026-10-01.jsonl",
+      "bytes": 3229092,
+      "sha256": "23427e331a49fb35a4b17549e2955cbea838bd74eb9327790639eca46f8e4765"
+    },
+    {
+      "path": "captures/physical-buttons-round2-findings.json",
+      "bytes": 4524,
+      "sha256": "95a073226612289c9c4ba5df085d3bfd1073a473fafb8dda77cd2da2c0b6546a"
+    },
+    {
+      "path": "captures/pistil-au-audit.json",
+      "bytes": 68866,
+      "sha256": "26519b77af15d65ce5313f7b33eebd6321a1c34bdd8bc0fc7c845901790aae61"
+    },
+    {
+      "path": "captures/pistil-chorus-2026-10-01.jsonl",
+      "bytes": 28987,
+      "sha256": "d9fc718fcb573f66b6d342c8a7994fe7693efb8b535bcb0c51a99a8ae7e39129"
+    },
+    {
+      "path": "captures/pistil-chorus-2026-10-01.mmon",
+      "bytes": 124770,
+      "sha256": "c9f4d71129253fd24734bdafde9fa3ca6c8827ea135433f84de9b44350984ded"
+    },
+    {
+      "path": "captures/pistil-filter-2026-10-01.jsonl",
+      "bytes": 175420,
+      "sha256": "9d1bf3d48bc2fe23f89bbfe3db8ba8ee178217b61166aac00bd39a8c8e311961"
+    },
+    {
+      "path": "captures/pistil-filter-2026-10-01.mmon",
+      "bytes": 77535,
+      "sha256": "ab4b485a2757cf9d5e08c70de285073f34771d8baeeeac2840361014c96044cd"
+    },
+    {
+      "path": "captures/pistil-filter-2026-10-01.syx",
+      "bytes": 5880,
+      "sha256": "d896d977a9f85f9d590a262fa892491cb8af75f0cd60345b434c91a01027110b"
+    },
+    {
+      "path": "captures/pistil-fx-followup.json",
+      "bytes": 5450,
+      "sha256": "d2fa4d829b5019bb82b3bd3c21e9cd4b2ae8c994c0be3dbd397ef4430febafb7"
+    },
+    {
+      "path": "captures/pistil-native-audit.json",
+      "bytes": 62333,
+      "sha256": "45e339ebf525c0e3e74b7e22ea4eebbc41cccad2f0b005ce715f4b890efec642"
+    },
+    {
+      "path": "captures/pistil-phaser-2026-10-01.jsonl",
+      "bytes": 36505,
+      "sha256": "ea7c7312d8c4110d734b5843864571f53eb052ecfacdcfaacd48b9d4bc52e67d"
+    },
+    {
+      "path": "captures/pistil-phaser-2026-10-01.mmon",
+      "bytes": 110122,
+      "sha256": "7dd6b043f2833f93a82e7936f60ddf5b7021b95f12939174189f25c1d2950839"
+    },
+    {
+      "path": "captures/pistil-phaser-2026-10-01.syx",
+      "bytes": 1212,
+      "sha256": "3b6024c9d67a31e9bcbb440dee32744c83bd4c180e7c8c06cacbe203087cac4c"
+    },
+    {
+      "path": "captures/pistil-ui-audit-sound-before-2026-10-01.jsonl",
+      "bytes": 768,
+      "sha256": "97de0844b059472420a57291d7b01cb9ab4919ee530c5d56297741c86cf96f3e"
+    },
+    {
+      "path": "captures/pistil-vst3-audit.json",
+      "bytes": 68838,
+      "sha256": "db9bcd809ca6aa28fc492b71d7e8fb3b576d5c953f9fd36c573f8dc58942b61b"
+    },
+    {
+      "path": "captures/probe-bpm-cc-2026-10-01.jsonl",
+      "bytes": 6294,
+      "sha256": "ac7ee738f6cd5a337670d625367e79fba90130660d32dba712c72f09c065bdde"
+    },
+    {
+      "path": "captures/probe-bpm-press-round2-2026-10-01.jsonl",
+      "bytes": 20781,
+      "sha256": "f7b19ae08c4866936ad8f4ac90b8ecfa3279e0ac5f290c05df9cd831e2139f02"
+    },
+    {
+      "path": "captures/probe-continue-clock-2026-10-01.jsonl",
+      "bytes": 137524,
+      "sha256": "b56c84adb54275318817e6a785f7ee280e03095855820aebf00b8673b7379704"
+    },
+    {
+      "path": "captures/probe-drum-stop-2026-10-01.jsonl",
+      "bytes": 20778,
+      "sha256": "06a86bb4b055fdf1465233e87340e0f15a80e271a35458ed0b67f3495cb16f56"
+    },
+    {
+      "path": "captures/probe-key-cc-2026-10-01.jsonl",
+      "bytes": 498,
+      "sha256": "97eea87774b49348133301a9af381e89f37fcbe22ca19e5245e51d7ec3eee207"
+    },
+    {
+      "path": "captures/probe-key-enable-cc-2026-10-01.jsonl",
+      "bytes": 498,
+      "sha256": "8b765f164523c57d41d53585a1481458f978cd32982aca3fd30717b92ce9e935"
+    },
+    {
+      "path": "captures/probe-loop-start-2026-10-01.jsonl",
+      "bytes": 492,
+      "sha256": "0cd214a70f24326dac7b816f120a483d00cd0c4dc3d0f7ef2d8e5849f9d25a17"
+    },
+    {
+      "path": "captures/probe-loop-stop-2026-10-01.jsonl",
+      "bytes": 35157,
+      "sha256": "55d21163facde8ad8554c0ef2731d09667c725817c135a06e6715a6ddc96067f"
+    },
+    {
+      "path": "captures/probe-mmc-playback-2026-10-01.jsonl",
+      "bytes": 106196,
+      "sha256": "2267e006b1cc6a4a1722f5dc50255d29d8acb04c1a863eec1069a57d4ff08edc"
+    },
+    {
+      "path": "captures/probe-perform-cc-2026-10-01.jsonl",
+      "bytes": 498,
+      "sha256": "906363f05c20be726c265796c99172e9b82b0a455ae1e9834e3c81937f350236"
+    },
+    {
+      "path": "captures/probe-start-clock-2026-10-01.jsonl",
+      "bytes": 137524,
+      "sha256": "8f50b60c900077f72c6c11e37b0a03ba26780f109792936e9dec16f875a8a0c0"
+    },
+    {
+      "path": "captures/probe-stock-service-2026-10-01.jsonl",
+      "bytes": 2989,
+      "sha256": "7fdd286a6166aca4505fc6120ecc1e02746e5be7660341b7bdb4531f49624a94"
+    },
+    {
+      "path": "captures/readback-bass-voicing-35-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "3a4b4882aef554fed28191fba7a227867973f008229aae587d554bc74ca7f417"
+    },
+    {
+      "path": "captures/readback-chord-voicing-36-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "3320bcec3e5eabfc5bf7f061aa29346d4eb41ad5c13033072902c92f284ce85b"
+    },
+    {
+      "path": "captures/readback-restored-bass-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "05ce0c50febdf8cd360a41512e015b9a8533679df48ba7e3aa3ae683b28e3d8d"
+    },
+    {
+      "path": "captures/readback-restored-chord-2026-10-01.jsonl",
+      "bytes": 675,
+      "sha256": "1b5a41d21ca5956b4c1eb1894da113ff3026d1ee32860d63119746c4f94cafb6"
+    },
+    {
+      "path": "captures/reconnected-identity-2026-10-01.jsonl",
+      "bytes": 693,
+      "sha256": "29746de7d92e43310b58ffaa450cf0b7db0648cbb776e2271859d20c1cc08390"
+    },
+    {
+      "path": "captures/restore-bass-voicing-23-2026-10-01.jsonl",
+      "bytes": 822,
+      "sha256": "fcd867bd2b38f56ea30fc45acd1edc1ba7c32a8564149a02dd4cb40a0a5cb9b9"
+    },
+    {
+      "path": "captures/restore-chord-voicing-24-2026-10-01.jsonl",
+      "bytes": 822,
+      "sha256": "35a06e4d4fa9b04ecc32260f6c9e16cc56fef9d2b4be8aef8d2f5f2855a956c3"
+    },
+    {
+      "path": "captures/session-findings.json",
+      "bytes": 5946,
+      "sha256": "80a38087776cbfa5438d25264d945ba1b1f7098c48866577089a67f356fb8d81"
+    },
+    {
+      "path": "captures/stock-midi-receiver-audit.json",
+      "bytes": 8074,
+      "sha256": "ffdf392d444d56d87c568be3ed02a4ef28a0e5d71d461dc4ede137edfa1620d3"
+    },
+    {
+      "path": "captures/transport-all-tests-2026-10-01.jsonl",
+      "bytes": 6342259,
+      "sha256": "b28cabcf5feae10f16bd9e14e9562a4cc15210f4f3385f49f95c292d901d16f2"
+    },
+    {
+      "path": "captures/transport-all-tests-2026-10-01.mmon",
+      "bytes": 7075141,
+      "sha256": "c6ccc905a4b5490d252746925f5623b215b8cf4b3a62ccf0e69c51345e266362"
+    },
+    {
+      "path": "captures/transport-clock-tests-2026-10-01.jsonl",
+      "bytes": 5276443,
+      "sha256": "8eaca54487f8a9f9ead183ee00c9137bc71c5bc470c975c1a32abf8c45102b8d"
+    },
+    {
+      "path": "captures/transport-clock-tests-2026-10-01.mmon",
+      "bytes": 5872568,
+      "sha256": "ca88cbf9ef8da93236c48f7dcab5efa69e000f4460f7beb8df128116be7db45a"
+    },
+    {
+      "path": "captures/transport-tests-identity-after-2026-10-01.jsonl",
+      "bytes": 11319,
+      "sha256": "d5a129112023045245746cd0e2422ec7eb98b34658811d821ca3c4470e4b4853"
+    },
+    {
+      "path": "captures/usb-current-interface-descriptors.json",
+      "bytes": 441,
+      "sha256": "546eec356a1aea98747f2258205849b68664bf03619172a17b11c24ba761ce49"
+    },
+    {
+      "path": "captures/usb-route-audit.json",
+      "bytes": 4873,
+      "sha256": "398470621ae33ed0fe929826531dbc9bb099d8a0631d1c748f0c49c62c96c6a7"
+    },
+    {
+      "path": "captures/voicing-and-volume-test-2026-10-01.jsonl",
+      "bytes": 39722,
+      "sha256": "4dda0dbdb758031cdfd040803eac6868c407de8935bfb45586e7cbe348e9a494"
+    },
+    {
+      "path": "captures/voicing-and-volume-test-2026-10-01.mmon",
+      "bytes": 22811,
+      "sha256": "7ac23110489e0217983ecda65d5d7b3422af841e182e7ea5d7e7649a3447bc1e"
+    },
+    {
+      "path": "captures/voicing-session-baseline-2026-10-01.jsonl",
+      "bytes": 28640,
+      "sha256": "59694c3c3850bc9cf1e7d5c15b62e326b99c6c66778cecbf466e5c4d6b020255"
+    },
+    {
+      "path": "captures/voicing-session-baseline-2026-10-01.mmon",
+      "bytes": 16421,
+      "sha256": "1187632ee6eaeecc60fd9579dcfac73210651b91fe8fa3ec73371873e1515237"
+    },
+    {
+      "path": "captures/voicing-session-findings.json",
+      "bytes": 4003,
+      "sha256": "c0934abda441035c39b7a16b62d67de823aa6e05ebd2ff4736ced728fc504c8f"
+    },
+    {
+      "path": "research/display-maintenance.asm",
+      "bytes": 4058,
+      "sha256": "75594c85233e151548e50bd1f097b7b3911860391371a7e5bd10e137714d40b1"
+    },
+    {
+      "path": "research/firmware-site.html",
+      "bytes": 342121,
+      "sha256": "35ca751bbc979e90d4b7872fe00e639499e46b73bb42a55f9956189136310690"
+    },
+    {
+      "path": "research/firmware-updater.js",
+      "bytes": 138087,
+      "sha256": "6cdadfa9b957e53e2138b07e97db634f4e872cf373f3441f0679d3335620f433"
+    },
+    {
+      "path": "research/maintenance-handlers.asm",
+      "bytes": 10037,
+      "sha256": "4f24259ff36ebd6f6e5bd0039141b260674e8f4850538b17281c8452bbc049c2"
+    },
+    {
+      "path": "research/midi-cc-receiver.asm",
+      "bytes": 3767,
+      "sha256": "fb46ea0a8bfaca249abcbba95e58c67b0d8a659e99d9a6d8aa956aa6eacff132"
+    },
+    {
+      "path": "research/midi-channel-receiver.asm",
+      "bytes": 1416,
+      "sha256": "962165abc7cd57a52665deb58a7ab47455c973026e02318bf0f7301075fc143b"
+    },
+    {
+      "path": "research/midi-receiver.asm",
+      "bytes": 30904,
+      "sha256": "e492250ecb918e94679334239a6ff6edce6139b927929dff4a6e40dfbf498ef3"
+    },
+    {
+      "path": "research/midi-sysex-receiver.asm",
+      "bytes": 18697,
+      "sha256": "a8a7b48a0912492e5629b7ef6b405f332ee72971a2f1db3dcf40bc2e8a7495ef"
+    },
+    {
+      "path": "research/midi-usb-receiver.asm",
+      "bytes": 3215,
+      "sha256": "17432e3865e6f3eba5fed5fcea0c632acba7ec8b2f8609762fbf85c312b4d5ec"
+    },
+    {
+      "path": "research/native-tempo-control-trace.asm",
+      "bytes": 5746,
+      "sha256": "d220dc19f78d047bccf0a92efbe369a90b74125f7ce5cea0dee1b5c8e1033dd5"
+    },
+    {
+      "path": "research/orchid-3.92.bin",
+      "bytes": 474496,
+      "sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f"
+    },
+    {
+      "path": "research/orchid-3.92.blob",
+      "bytes": 611737,
+      "sha256": "4f6b8d8b5256216236325bbc2fa9c95db9a84384d9eaab4152157f541d1a251c"
+    },
+    {
+      "path": "research/panel-report-xrefs.asm",
+      "bytes": 15638,
+      "sha256": "9b41ad855c8c6607aaa7541a644880105789b8b27ab2fe826d387f1c3d7d3a37"
+    },
+    {
+      "path": "research/parameter-setter.asm",
+      "bytes": 4578,
+      "sha256": "9e6c997cf7687fc966cd5c01260020b886c96c8bebca7a310e7c517c1dcfe50d"
+    },
+    {
+      "path": "research/pistil-au-selected.asm",
+      "bytes": 3147139,
+      "sha256": "7b468c5502a85832b72211b14041bbe8edf20f5d710a2f52eb4f5181c436feda"
+    },
+    {
+      "path": "research/pistil-embedded.js",
+      "bytes": 962427,
+      "sha256": "a5fab03593cb2140d939ddcbf1366659ef4b13cd13172bc36c9785c7ef93dc06"
+    },
+    {
+      "path": "research/pistil-native-selected.asm",
+      "bytes": 2938359,
+      "sha256": "9467c4686625fa007443317071d3ea042801c9028f354021010a43f8e857c3e4"
+    },
+    {
+      "path": "research/pistil-vst3-selected.asm",
+      "bytes": 3147130,
+      "sha256": "1c00de1b9301769047401b1bbf825e5da740b2d18b2bcb1a3eb60449b109ebb2"
+    },
+    {
+      "path": "research/startup-memory-protection.asm",
+      "bytes": 5456,
+      "sha256": "c147362d6feac4069c124bf0b79a2f959499403d1064f66826add55ce5a0908b"
+    },
+    {
+      "path": "research/usb-alternate-mode-first-pass.asm",
+      "bytes": 12952,
+      "sha256": "8adbe0c5cdb1042e6310b1f7488b62d902887d23d98bf9478ad8d14911e94967"
+    },
+    {
+      "path": "research/usb-alternate-mode-xrefs.asm",
+      "bytes": 12662,
+      "sha256": "c0cfecdc44243f5d19fbfe7a6380d5338cd6ceed6d85d571a9ebd7be9cdb82d4"
+    },
+    {
+      "path": "research/usb-cdc-receive-xrefs.asm",
+      "bytes": 2955,
+      "sha256": "0550060e18489cd22ad3eee504d7834b610eed44dc2948409f775facf606b758"
+    },
+    {
+      "path": "research/usb-core-and-cdc-setup.asm",
+      "bytes": 15302,
+      "sha256": "8600348c73d1ce6d667bf521a1e52530ad5aeba83851b7a62aa8c6d18329d793"
+    },
+    {
+      "path": "research/usb-midi-class-setup.asm",
+      "bytes": 1330,
+      "sha256": "7cd6a04633b1bc80c5973e77df7881d6b76b7593caefd80749f5d3ac3ca82e19"
+    },
+    {
+      "path": "research/usb-route-audit.asm",
+      "bytes": 10644,
+      "sha256": "85ac486376ff2322a0ab4d64fc20efd31389a637850bbac078eb4b000e4dd712"
+    },
+    {
+      "path": "research/voicing-setter.asm",
+      "bytes": 2589,
+      "sha256": "5bf1a4f81bbe37c85b010c4f76cb8d60f1fbfccaaae10c8d427cb2c828c395e5"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-01",
+  "timezone": "America/New_York",
+  "firmware_modified": false,
+  "scope": "Absolute device state setters; no general encoder turn, press, or menu-navigation command established.",
+  "provenance": {
+    "supplied_audit": "/Users/rspectre/.codex/attachments/0bb836fd-3024-48c2-a39f-4dfb4c05bc33/Pasted text.txt",
+    "installer": "/Users/rspectre/Downloads/Pistil_v1_0_2_MacUniversal.dmg",
+    "installer_sha256": "4544de0a0cc64930ccb4279dad76b85f25c480fd7b9ff77658b0e28519dc51b1",
+    "installer_hash_matches_supplied_audit": true,
+    "installed_binary_sha256": "42ea0e7851299138869e18066969e02286e2dc72bbcca43cd45e29382ef1add8",
+    "extracted_frontend_sha256": "a5fab03593cb2140d939ddcbf1366659ef4b13cd13172bc36c9785c7ef93dc06",
+    "frontend_literal_send_events": [
+      "activate",
+      "bassPatchChange",
+      "gLS",
+      "getDirectMidiBridgeStatus",
+      "loadUserBassPreset",
+      "loadUserTreblePreset",
+      "log",
+      "noteOff",
+      "noteOn",
+      "openURL",
+      "orchidParamEdited",
+      "requestAvailableSlots",
+      "requestOrchidConnectionStatus",
+      "requestOrchidParams",
+      "resendDeviceEnquiry",
+      "resizeWindow",
+      "savePreset",
+      "saveToOrchidSlot",
+      "setDirectMidiBridgeInput",
+      "setDirectMidiBridgeOutput",
+      "setOrchidMessageIgnore",
+      "toggleBass",
+      "toggleFxLock",
+      "treblePatchChange",
+      "uploadToOrchid"
+    ]
+  },
+  "transport": {
+    "source": "Orchid",
+    "destination": "Orchid",
+    "recorder": "Snoize MIDI Monitor: isolated source and output-spy windows",
+    "outgoing_events": 12,
+    "incoming_events": 24,
+    "identity_query_sent": "f0 7e 7f 06 01 f7",
+    "identity_reply_received": false,
+    "firmware_version_confirmed_this_session": null
+  },
+  "observations": [
+    {
+      "target": "Sound",
+      "sender": "Pistil 1.0.2",
+      "packet": "f0 00 22 0c 01 35 01 1b f7",
+      "user_confirmed": "GHOST 002"
+    },
+    {
+      "target": "Sound Reverb",
+      "sender": "Pistil 1.0.2",
+      "packet": "f0 00 22 0c 01 47 00 72 00 5c 3c f7",
+      "raw": 92,
+      "pistil_percent": 72,
+      "user_confirmed_display": "07",
+      "audible_change_confirmed": false
+    },
+    {
+      "target": "Sound Reverb",
+      "sender": "our CoreMIDI script",
+      "packet": "f0 00 22 0c 01 47 00 72 00 2e 6a f7",
+      "raw": 46,
+      "user_confirmed_display": "04"
+    },
+    {
+      "target": "Sound Reverb",
+      "sender": "our CoreMIDI script",
+      "packet": "f0 00 22 0c 01 47 00 72 00 26 72 f7",
+      "raw": 38,
+      "user_confirmed_display": "03"
+    },
+    {
+      "target": "Bass",
+      "sender": "Pistil 1.0.2",
+      "packet": "f0 00 22 0c 01 3f 07 0b f7",
+      "user_confirmed_display": "08"
+    },
+    {
+      "target": "Bass",
+      "sender": "our CoreMIDI script",
+      "packet": "f0 00 22 0c 01 3f 06 0c f7",
+      "user_confirmed_display": "07"
+    }
+  ],
+  "protocol": {
+    "frame": "F0 00 22 0C 01 command payload checksum F7",
+    "checksum": "(-sum(bytes after F0 and before checksum)) & 0x7f; matches every captured vendor packet",
+    "sound": {
+      "command_hex": "35",
+      "payload": "zero-based factory index",
+      "tested_display_presets": [
+        1,
+        2
+      ]
+    },
+    "bass": {
+      "command_hex": "3f",
+      "payload": "zero-based factory index",
+      "tested_display_presets": [
+        7,
+        8
+      ]
+    },
+    "sound_reverb": {
+      "command_hex": "47",
+      "payload": "00 72 00 value",
+      "engine": 0,
+      "parameter_index": 114,
+      "parameter_name": "REVSEND",
+      "encoding": "index low 7 bits, index high 7 bits",
+      "raw_range": [
+        0,
+        127
+      ],
+      "tested_raw_values": [
+        38,
+        46,
+        92
+      ]
+    }
+  },
+  "corrections_and_limits": [
+    "The first slider-drag packet, raw 46, was mistakenly treated as the untouched baseline. It changed the hardware to 04. Original exact raw baseline was never captured.",
+    "Reloading Sound 001 did not return physical Reverb to 03 in this session. The cause was not established.",
+    "Restored original displayed Reverb 03 using raw 38; exact original sub-step value cannot be claimed.",
+    "Pistil showed Bass 001 while the physical device reported 07. Read-back/UI synchronization must not be assumed.",
+    "Changing Pistil to its Bass editor view emitted no Bass-enable or preset write in the capture.",
+    "Hardware acceptance is supported by user observations, not MIDI acknowledgements; no incoming SysEx was captured.",
+    "Inherited Linux firmware claim 3.92 was not independently verified on this Mac.",
+    "No preset-slot save or firmware command was sent. Do not replay the whole capture as a restoration script."
+  ],
+  "unresolved_independent_panel_controls": [
+    "Perform",
+    "Key",
+    "Loop",
+    "BPM",
+    "Options",
+    "master Volume"
+  ],
+  "not_tested_this_session": [
+    "FX1 amount/type",
+    "FX2 amount/type",
+    "Filter",
+    "Bass enable",
+    "FX lock",
+    "Voicing dials"
+  ],
+  "final_hardware_state": {
+    "user_confirmed": true,
+    "sound": "001 ORCHID EP",
+    "bass": "07",
+    "sound_reverb_display": "03"
+  },
+  "artifacts": [
+    "captures/mac-to-orchid.mmon",
+    "captures/orchid-to-mac.mmon",
+    "captures/mac-to-orchid.syx",
+    "captures/mac-to-orchid.jsonl",
+    "captures/orchid-to-mac.jsonl",
+    "research/orchid_midi.py",
+    "research/decode_mmon.py",
+    "orchid-midi"
+  ],
+  "validation": "3 unittest cases passed, including seven literal captured packet fixtures, archive decoding, and invalid 7-bit data rejection",
+  "usage_examples": [
+    "./orchid-midi reverb 38 --dry-run",
+    "./orchid-midi reverb 38",
+    "./orchid-midi bass 7",
+    "./orchid-midi sound 1"
+  ],
+  "references": [
+    "https://www.snoize.com/MIDIMonitor/docs",
+    "https://support.telepathicinstruments.com/hc/en-us/articles/15303106395023-Using-Orchid-as-a-Polyphonic-Sound-Module-via-MIDI-In"
+  ]
+}

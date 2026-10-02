@@ -1,0 +1,17 @@
+{
+  "status": "FAILED_LIVE_DO_NOT_REPLAY",
+  "test_date": "2026-10-01",
+  "recorded_date": "2026-10-02",
+  "capture": "probe-stock-service-2026-10-01.jsonl",
+  "user_observations": [
+    "It is now emitting a loud high tone.",
+    "I rebooted the device."
+  ],
+  "expected_reply": "f0 00 22 0c 01 78 03 f7",
+  "expected_reply_observed": false,
+  "host_process_completed": true,
+  "post_reboot_normal_operation_confirmed": false,
+  "cause": "Unresolved; offline emulation did not predict hardware behavior.",
+  "mitigation": "Live probe-stock-service command disabled before CoreMIDI access. Historical builder retained for offline reconstruction only.",
+  "persistent_state_integrity": "Not established. No flash-write command was sent."
+}

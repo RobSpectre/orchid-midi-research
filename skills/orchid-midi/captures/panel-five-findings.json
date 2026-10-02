@@ -1,0 +1,310 @@
+{
+  "firmware_user_report": "v3.9.2",
+  "status": "completed_scoped_mapping_and_input_tests",
+  "capture": "captures/panel-five-live-2026-10-01.jsonl",
+  "distinction": "Outgoing hardware reports are not established incoming control commands.",
+  "controls": {
+    "Perform": {
+      "baseline": "Off",
+      "turn_report": {
+        "channel": 1,
+        "cc": 103,
+        "observed_values": {
+          "0": "Off",
+          "1": "Strum 01 (intermediate click)",
+          "2": "Strum 02"
+        }
+      },
+      "physical_sequence": [
+        1,
+        2,
+        1,
+        0
+      ],
+      "press": "Opens display menu; no corresponding MIDI packet observed in this capture.",
+      "remote_probe": {
+        "hex": "b0 67 01",
+        "physical_result": "No change: Perform remained Off (user confirmed)."
+      },
+      "scope": "Strum amount 0/1/2 and Arp/Strum menu selection notifications captured. Full per-mode amount ranges were not enumerated.",
+      "mode_selection_test": {
+        "user_sequence": [
+          "select Arp",
+          "one clockwise and one counterclockwise amount click",
+          "select original Strum",
+          "return amount to Off"
+        ],
+        "user_response": "I walked through this path. Menu showed what you described at each step.",
+        "observed_selection_report": {
+          "channel": 1,
+          "cc": 104,
+          "value": 127,
+          "occurrences_utc": [
+            "2026-10-01T21:24:29.685Z",
+            "2026-10-01T21:24:51.369Z"
+          ]
+        },
+        "observed_amount_reports": [
+          1,
+          0
+        ],
+        "interpretation": "Both mode selections emitted the same CC104=127 notification, which does not identify the selected mode. No separate Arp amount messages were captured in this final sequence; exact Arp screen values were not supplied."
+      },
+      "restoration": "User confirmed walking through the requested return to original Strum/Off; final captured CC103=0."
+    },
+    "Key": {
+      "baseline": {
+        "selected": "C sharp minor",
+        "enabled": false
+      },
+      "turn_report": {
+        "channel": 1,
+        "cc": 107,
+        "observed_values": {
+          "22": "C sharp minor (user confirmed)",
+          "23": "Db minor (firmware table; display not read)",
+          "24": "D minor (firmware table; display not read)"
+        }
+      },
+      "enable_report": {
+        "channel": 1,
+        "cc": 108,
+        "on": 127,
+        "off": 0
+      },
+      "physical_sequence": [
+        "enable",
+        23,
+        24,
+        23,
+        22
+      ],
+      "before_remote_probe": {
+        "selected": "C sharp minor",
+        "enabled": true
+      },
+      "remote_probe": {
+        "messages": [
+          "b0 6b 17",
+          "b0 6c 00"
+        ],
+        "physical_result": "No change: selected key remained C sharp minor and Key mode remained on (user confirmed)."
+      },
+      "firmware_table": {
+        "source": "Orchid 3.92 decoded firmware, key names 0x080731cc; mode names 0x080732b8; setter 0x08034954",
+        "interpretation": "Raw 0..20 Major; 21..41 Minor. Flat glyph represented as ~ in firmware and b here. Table is static evidence, not all entries physically verified.",
+        "entries": {
+          "0": "C major",
+          "1": "C# major",
+          "2": "Db major",
+          "3": "D major",
+          "4": "D# major",
+          "5": "Eb major",
+          "6": "E major",
+          "7": "E# major",
+          "8": "Fb major",
+          "9": "F major",
+          "10": "F# major",
+          "11": "Gb major",
+          "12": "G major",
+          "13": "G# major",
+          "14": "Ab major",
+          "15": "A major",
+          "16": "A# major",
+          "17": "Bb major",
+          "18": "B major",
+          "19": "B# major",
+          "20": "Cb major",
+          "21": "C minor",
+          "22": "C# minor",
+          "23": "Db minor",
+          "24": "D minor",
+          "25": "D# minor",
+          "26": "Eb minor",
+          "27": "E minor",
+          "28": "E# minor",
+          "29": "Fb minor",
+          "30": "F minor",
+          "31": "F# minor",
+          "32": "Gb minor",
+          "33": "G minor",
+          "34": "G# minor",
+          "35": "Ab minor",
+          "36": "A minor",
+          "37": "A# minor",
+          "38": "Bb minor",
+          "39": "B minor",
+          "40": "B# minor",
+          "41": "Cb minor"
+        }
+      },
+      "user_description": "User described two clockwise clicks as two half steps. Firmware includes enharmonic steps; intermediate names were not read.",
+      "restored": "Key mode Off, user confirmed; CC108=0 captured."
+    },
+    "BPM": {
+      "baseline": 87,
+      "user_sequence": [
+        "press: drums on",
+        "press: drums off",
+        "two clicks left:85",
+        "two clicks right:87"
+      ],
+      "turn_report": {
+        "channel": 1,
+        "cc": 112,
+        "encoding": "Observed numeric BPM in CC data byte; range above 127 not verified."
+      },
+      "press_report": "Captured fc fa sequences and MIDI Clock; exact relation of each transport byte to physical action needs analysis.",
+      "restored_before_probe": 87,
+      "remote_probe": {
+        "hex": "b0 70 58",
+        "requested_bpm": 88,
+        "physical_result": "No change: BPM remained 87 (user confirmed)."
+      },
+      "captured_turn_values": [
+        86,
+        85,
+        86,
+        87
+      ]
+    },
+    "Loop": {
+      "status": "navigation, recording/playback, physical pause, and incoming Start/Stop tested",
+      "user_observation": "One click left opened menu: Exit, Free, 1 bar, 2 bars, 4 bars, 8 bars, 16 bars.",
+      "existing_recording": "User says there is no loop to keep.",
+      "unattributed_transport": "Several FA/FC events arrived 21:08:49\u201321:09:28 UTC; awaiting user action chronology, not assigned to turning versus pressing.",
+      "menu_navigation_test": {
+        "requested_sequence": [
+          "Free",
+          "1 bar",
+          "2 bars",
+          "return to Exit"
+        ],
+        "user_observation": "Scrolled with pauses, returned to beginning to exit; did not press Loop or operate start/stop.",
+        "captured_messages": [
+          {
+            "utc": "21:12:30.711217",
+            "hex": "fa"
+          },
+          {
+            "utc": "21:12:33.643604",
+            "hex": "fa"
+          },
+          {
+            "utc": "21:12:50.078572",
+            "hex": "fa"
+          },
+          {
+            "utc": "21:12:51.323618",
+            "hex": "fc"
+          },
+          {
+            "utc": "21:12:52.134688",
+            "hex": "fc"
+          }
+        ],
+        "interpretation": "Navigation emitted MIDI Start/Stop, with no dedicated CC/SysEx identifying loop length observed. Exact menu-item-to-message correspondence is not established."
+      },
+      "recording_test": {
+        "length": "1 bar",
+        "user_confirmed_audible": true,
+        "screen": [
+          "Overdub",
+          "Pause",
+          "Clear"
+        ],
+        "repeated_note_hex": "91 24 6d",
+        "note": "Packets with realtime Clock interleaved also contain this Note On; cadence approximately 2.76 seconds."
+      },
+      "remote_stop_probe": {
+        "hex": "fc",
+        "capture": "captures/probe-loop-stop-2026-10-01.jsonl",
+        "physical_result": "User confirmed loop continued audibly; repeated MIDI notes captured after incoming FC."
+      },
+      "physical_pause": {
+        "user_confirmed": true,
+        "observed_message": "fc",
+        "observed_note_off": "81 24 00",
+        "approx_utc": "2026-10-01T21:21:20.694Z"
+      },
+      "remote_start_probe": {
+        "hex": "fa",
+        "capture": "captures/probe-loop-start-2026-10-01.jsonl",
+        "physical_result": "User confirmed Start did not resume the paused loop; no audible playback.",
+        "midi_observation": "No incoming packet from Orchid during seven seconds after Start; prior physical Pause had stopped its clock and note output."
+      },
+      "restoration": "User cleared the disposable test loop, returned to length selection, and exited."
+    },
+    "Options": {
+      "tested_actions": [
+        "press to open",
+        "two clockwise clicks to Instrument",
+        "two counterclockwise clicks to Exit",
+        "press to close"
+      ],
+      "user_confirmed": true,
+      "outbound_result": "No MIDI messages observed for the reported navigation, after Loop navigation ended.",
+      "scope": "Menu opening, navigation, and closing only. Individual Options settings were not all exercised.",
+      "incoming_result": "No normal MIDI menu-navigation or encoder-press receiver found in matching firmware; no report packet exists to replay for these actions."
+    }
+  },
+  "receiver_audit": "captures/stock-midi-receiver-audit.json",
+  "restoration_pending": [],
+  "limitations": [
+    "Outgoing reports are not symmetric incoming commands.",
+    "Only observed ranges and actions are claimed; individual Options settings and every Perform amount were not exhaustively tested.",
+    "CC104 mode-selection notification was captured but not independently replay-tested; static receiver routes CC100..119 to no action.",
+    "Firmware audit uses public image matching user-reported version, not a device flash dump.",
+    "Sound preset traffic from an unattributed source occurred during the session; final-state claims here cover only the five controls under test."
+  ],
+  "native_capture": "captures/perform-key-replay-2026-10-01.mmon",
+  "unattributed_events": [
+    {
+      "utc": "2026-10-01T21:05:05Z",
+      "description": "MIDI Monitor observed Sound selection 002 then 001 at 21:05:07Z, outside the three CC probes. No source application attribution available from this capture."
+    }
+  ],
+  "connection_checks": [
+    {
+      "capture": "captures/panel-menu-connection-check-2026-10-01.jsonl",
+      "utc": "2026-10-01T21:12:19Z",
+      "result": "Identity reply received; device is connected during pending menu tests."
+    }
+  ],
+  "capture_continuation": "captures/panel-five-continuation-2026-10-01.jsonl",
+  "capture_note": "Continuation overlaps initial passive capture; duplicate host timestamps are the same observed packet.",
+  "native_capture_snapshots": [
+    "captures/perform-key-replay-2026-10-01.mmon",
+    "captures/panel-five-through-loop-stop-2026-10-01.mmon"
+  ],
+  "conclusion": "All five panel controls were examined. Outgoing messages were captured; tested incoming CC and transport replays did not control the hardware. Matching stock firmware audit found no normal independent input commands for these controls. This is not a claim that every submenu setting or maintenance mechanism was tested.",
+  "final_state": {
+    "Perform": "Strum amount Off, final CC103=0",
+    "Key": "C sharp minor; Key mode Off",
+    "BPM": 87,
+    "Loop": "Disposable test recording cleared and menu exited by user",
+    "Options": "Menu exited without changing a setting"
+  },
+  "artifacts": {
+    "native_monitor_capture": "captures/panel-five-final-2026-10-01.mmon",
+    "decoded_monitor_capture": "captures/panel-five-final-2026-10-01.jsonl",
+    "receiver_audit": "captures/stock-midi-receiver-audit.json",
+    "sender": "research/orchid_midi.py"
+  },
+  "passive_cli_capture": "Stopped after completing tests; original initial capture ended at its scheduled timeout.",
+  "validation": {
+    "protocol_and_receiver_tests_passed": 9,
+    "native_capture_messages": 12415,
+    "replayed_ccs": [
+      103,
+      107,
+      108,
+      112
+    ],
+    "replayed_realtime": [
+      "FC Stop",
+      "FA Start"
+    ],
+    "restoration_pending": []
+  }
+}
