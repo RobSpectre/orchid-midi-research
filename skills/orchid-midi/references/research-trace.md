@@ -53,3 +53,7 @@ Maintenance commands 71/72/73 and display/boot routes were traced as research. T
 The native `pushParamToHardware` function scans the same135 records to resolve an index and sends command47. Firmware accepts voice indices0–134, global0–35, and the deeper drum setter implements indices0–52. The new CLI exposes those ranges with separate evidence labels. Metadata VER is not writable. Sound selector0x08035118 bounds zero-based0–99; Bass command3F at0x0804621C bounds0–11. Bass43 and FX-lock48 call toggle functions independent of their payload, so the CLI offers only explicit toggles.
 
 Static mapping is not additional physical testing. The original failed maintenance probe remains blocked, and no new device parameter writes were used to package the portable CLI.
+
+## Key and master Volume follow-up (October 2)
+
+[Key/Volume audit](key-volume.md) records controller fields, native setters, stored-settings callers and the unrelated global-2 audio crossfade. All 256 tested channel/value combinations of CC7/107/108/113 return without changing synthetic DSP state in guarded offline execution. A fresh physical capture confirms Volume CC113 is relative (-1/+1), not absolute. No new live setter was established.

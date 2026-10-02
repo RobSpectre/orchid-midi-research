@@ -9,7 +9,7 @@ description: Install and use the cross-platform Python orchid-midi CLI to contro
 
 ## Install once, then use
 
-From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.3.0 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
+From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.3.2 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
 
 ```sh
 orchid-midi ports
@@ -61,3 +61,7 @@ Read [Perform through preset recall](references/perform.md). `orchid-midi perfor
 Independent Perform, Key, Loop, BPM, Options, drum transport and master Volume have no established incoming setters. Perform has the limited preset-recall route above. The CLI rejects them with explanations. Voice GAIN and RPVOL are not master Volume. Outgoing reports do not prove incoming control. Bass enable and FX lock are **toggles**, not absolute booleans; never retry them automatically after a timeout. Persistent preset saving and bulk maintenance are research-only, not configuration commands.
 
 For new research, use `listen` or an available native computer-use tool with Pistil/MIDI Monitor. Preserve captures and distinguish UI state, traffic and physical observation. Never replay an entire capture or firmware blob. Unexpected sustained audio or device failure ends the live test: preserve evidence and ask the owner about recovery before further hardware work.
+
+## Key and master Volume reports
+
+`listen` identifies outgoing Key selection/enabled reports and relative master Volume steps. This is observation support, not remote setting. Read [the Key/Volume trace](references/key-volume.md) before working on these controls. A volume step does not reveal the current absolute value; do not infer a full state from reports or send them back as setters.

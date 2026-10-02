@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "orchid-midi-research"
-version = "0.3.1"
+version = "0.3.2"
 description = "Portable Python CLI for researched Telepathic Orchid USB MIDI controls"
 requires-python = ">=3.10"
 dependencies = ["python-rtmidi>=1.5.8,<2"]

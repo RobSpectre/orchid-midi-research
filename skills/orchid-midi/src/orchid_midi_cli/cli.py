@@ -145,6 +145,7 @@ def run(a, session_factory=MidiSession):
              parameters_per_voice=135,configurable_parameters_per_voice=134,
              engine_index_ranges=LIMITS,presets={'sound':[1,100],'bass':[1,12]},
              preset_names=True,perform_workaround='perform-preset DONOR [--timbre FACTORY_SOUND]; changes selected Sound slot',
+             panel_reports=['key-selection','key-enabled','master-volume-step (relative only)'],
              queries=QUERIES,toggles=['bass','fx-lock'],unsupported=UNSUPPORTED,
              verification='Only recorded controls were tested on hardware; others are static mappings.');return 0
     if cmd in ('parameters','catalog'):

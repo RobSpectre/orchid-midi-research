@@ -18,12 +18,12 @@ QUERIES = {'sound':0x51,'bass':0x54,'chord-voicing':0x52,'bass-voicing':0x55,
 RESPONSES = {**QUERIES, 'bass-refresh':0x54}
 UNSUPPORTED = {
     'perform':'No independent incoming setter found. Use perform-options and perform-preset for the limited preset-recall workaround; this changes the Sound slot.',
-    'key':'CC107/108 reports did not work as incoming controls.',
+    'key':'No incoming Key setter established. CC107/108 are decoded by listen as panel reports; receiver ignores them.',
     'loop':'Incoming Start/Stop did not control the physical looper.',
     'bpm':'Incoming CC112 and clock did not change hardware tempo or start drums.',
     'drum-transport':'Start, Continue, clock and MMC did not start drums; Stop did not stop them.',
     'options':'No remote menu-navigation or encoder-press command found.',
-    'master-volume':'Voice GAIN/RPVOL are not hardware master Volume.',
+    'master-volume':'No incoming master Volume setter established. CC113 reports relative dial steps; receiver ignores CC113 and CC7. Voice GAIN/RPVOL are not master Volume.',
     'preset-save':'Persistent slot writing was traced but is not a verified configuration operation.',
     'maintenance':'Blocked: command 0x73 caused a loud sustained tone and reboot. No maintenance/flash API.',
 }
@@ -169,6 +169,22 @@ def decode(data):
     elif len(data)==17 and data[:2]==b'\xf0\x7e' and data[3:8]==bytes.fromhex('06 02 00 22 0c') and data[-1]==0xf7:
         result.update(type='identity',manufacturer='Telepathic Instruments',version_bytes=list(data[12:16]),
                       matches_researched_version=data==bytes.fromhex('f0 7e 7f 06 02 00 22 0c 01 01 00 00 33 2e 09 02 f7'))
+    elif len(data)==3 and data[0]==0xb0 and data[1] in (107,108,113) and data[2]<128:
+        cc,value=data[1:]
+        result.update(type='panel_report',cc=cc,raw=value,remote_setter=False)
+        if cc==107:
+            result.update(control='key-selection',key_index=value)
+            # 21 fixed-width root labels, then the same roots in minor.
+            roots=('C','C#','D~','D','D#','E~','E','E#','F~','F','F#','G~','G','G#','A~','A','A#','B~','B','B#','C~')
+            if value<42:
+                result.update(firmware_root_label=roots[value%21],quality='Major' if value<21 else 'Minor')
+        elif cc==108:
+            result.update(control='key-enabled')
+            if value in (0,127):result['enabled']=value==127
+        else:
+            result.update(control='master-volume-step',absolute_value_known=False)
+            # Only +/-1 has physical confirmation; retain other values as raw.
+            if value in (1,127):result['delta']=1 if value==1 else -1
     elif data==b'\xf8':result['type']='clock'
     else:result['type']='midi'
     return result

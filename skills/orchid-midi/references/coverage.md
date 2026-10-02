@@ -23,7 +23,7 @@ This skill covers the researched USB MIDI surface of firmware v3.9.2, not every 
 | Release voices or reset MIDI controllers | `all-notes-off`, `all-sound-off`, `reset-controllers` | Static receiver mapping; may affect both voices. Not factory reset or a recovery guarantee after device malfunction. |
 | Apply multiple settings | `apply profile.json`; [schema and ordering](cli.md#configuration-file) | Entire profile validates before I/O; execution sequential, no automatic rollback or full-state backup. |
 | Read identity, presets, voicings | `identity`, `status`, `query TARGET`; [query meanings](cli.md) | Matching replies establish only requested data. Slot/info responses are partly uninterpreted. |
-| Capture MIDI reports | `listen --seconds 30 --file capture.jsonl`; [workflow](workflow.md) | Incoming traffic only. It does not spy on another app's outgoing port. Use native MIDI Monitor output spying when that is needed. Existing capture files are never overwritten by `listen`. |
+| Capture MIDI reports | `listen --seconds 30 --file capture.jsonl`; [workflow](workflow.md) | Key/Volume reports receive named decoding; Volume remains a relative step. Incoming traffic only. It does not spy on another app's outgoing port. Use native MIDI Monitor output spying when that is needed. Existing capture files are never overwritten by `listen`. |
 | Configure host routing/timing | `ports`, `configure`, `config`; [installation](../INSTALL.md) | Host preferences only; no instrument settings change. |
 
 `parameters`, `presets`/`names`, `perform-options` and `capabilities` are offline discovery commands. Their data is bundled; the agent does not need to inspect firmware or launch Pistil to use these controls.
@@ -48,3 +48,5 @@ This skill covers the researched USB MIDI surface of firmware v3.9.2, not every 
 ## What was validated
 
 The release's offline tests cover packet construction, input validation, catalog consistency, captured-sequence equivalence and simulated port behavior. macOS hardware confirmed the examples listed in [control-map.md](control-map.md) and [perform.md](perform.md). Linux/Windows hardware and every synth parameter have not been physically tested. Documentation completeness, offline test success and a successful MIDI send are three different kinds of evidence.
+
+The October 2 [Key/Volume audit](key-volume.md) traced their physical setters and stored-settings paths, and executed 256 ignored CC cases offline. Neither has gained a remote setter; only incoming report interpretation was added.

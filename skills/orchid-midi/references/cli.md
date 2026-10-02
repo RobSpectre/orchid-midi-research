@@ -1,4 +1,4 @@
-# Python CLI reference (0.3.1)
+# Python CLI reference (0.3.2)
 
 Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchid-midi` executable on macOS, Linux and Windows. CLI stdout is JSON/JSONL; errors are JSON on stderr and exit 2. Interrupted operations exit 130. Arguments are validated before MIDI access. Read-only help, parameters, capabilities and dry runs need no device or backend import.
 
@@ -114,3 +114,7 @@ Most expanded parameters have static code evidence, not physical verification. A
 ## Perform via a factory preset
 
 `perform-options` lists offline donor names with their stored mode/amount. `perform-preset DONOR [--timbre FACTORY_SOUND]` selects the donor, then optionally applies all 134 writable factory voice parameters with the same validated ordering as `apply`. It changes the selected Sound slot/name and replaces Sound edits; no state backup or persistent saving occurs. `--dry-run` prints the full plan before MIDI access. See [the hardware-tested example and limits](perform.md).
+
+## Panel report decoding
+
+`listen` identifies channel-1 CC107 as `key-selection`, CC108 as `key-enabled` (0/127), and CC113 as `master-volume-step` (physically confirmed raw127 = -1, raw1 = +1). It retains raw bytes and marks `remote_setter: false`. Key indices 0–41 receive their firmware root label and Major/Minor quality; out-of-range/unobserved encodings remain raw. Volume reports do not supply an absolute value. See [Key/Volume evidence and limitations](key-volume.md).

@@ -10,7 +10,7 @@ orchid-midi capabilities
 
 Prefer `pipx install .` or `uv tool install .` when your OS manages the base Python environment. Both install the dependency and the `orchid-midi` executable in an isolated environment. On systems where the executable directory is not on PATH, use `python -m orchid_midi_cli` with the Python into which you installed it.
 
-From the repository root the same install command works. A release also provides a small pure-Python wheel: `pipx install /path/to/orchid_midi_research-0.3.1-py3-none-any.whl`. The installer automatically fetches the platform-specific python-rtmidi dependency. The wheel contains the CLI and parameter catalog; the skill ZIP additionally contains the instructions and research archive.
+From the repository root the same install command works. A release also provides a small pure-Python wheel: `pipx install /path/to/orchid_midi_research-0.3.2-py3-none-any.whl`. The installer automatically fetches the platform-specific python-rtmidi dependency. The wheel contains the CLI and parameter catalog; the skill ZIP additionally contains the instructions and research archive.
 
 macOS uses CoreMIDI, Linux uses ALSA (or explicitly JACK), and Windows uses WinMM. No `amidi`, shell MIDI command, Pistil installation, firmware binary or disassembler is needed. Standard supported platforms normally have python-rtmidi binary wheels. Unusual Python/platform combinations may need RtMidi build dependencies; use a Python version with an available wheel. Linux needs a working ALSA sequencer device and access to `/dev/snd/seq`; containers must expose it. Windows may require closing other applications that exclusively hold the port.
 

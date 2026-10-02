@@ -39,7 +39,7 @@ Identity request: `F0 7E 7F 06 01 F7`. Observed reply: `F0 7E 7F 06 02 00 22 0C 
 | Loop menu | FA/FC while navigating length choices | No length ID or reliable per-choice mapping captured |
 | Loop playback | Physical press paused the loop | Incoming Stop did not pause; Start did not resume |
 | Options | No MIDI found for open, scroll to Instrument, return to Exit | No remote menu control established |
-| Master Volume | Pistil gain movement left physical master at 99 | Plugin voice gain is distinct from master Volume |
+| Master Volume | CC113 raw127 = down one, raw1 = up one; physical 85 → 83 → 85 verified October 2 | Incoming CC113/CC7 return without writes in offline receiver tests; voice gain is distinct |
 
 Key sequence was reported as C# minor → Db minor → D minor by the mapping audit; the owner initially described two half steps. Preserve that ambiguity rather than assigning a universal key-index formula.
 

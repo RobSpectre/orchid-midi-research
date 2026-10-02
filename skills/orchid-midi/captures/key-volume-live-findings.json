@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-02",
+  "firmware": "v3.9.2",
+  "scope": "Physical reports and offline receiver trace; no control writes sent",
+  "volume": {
+    "user_observation": "Two clicks down showed 83; two clicks back showed 85.",
+    "captured_cc": 113,
+    "captured_raw": [
+      127,
+      127,
+      1,
+      1
+    ],
+    "interpretation": "Relative -1,-1,+1,+1, not absolute volume",
+    "final_display_user_report": 85
+  },
+  "key": {
+    "enabled_user_report": false,
+    "selection_name": "Not supplied in this session",
+    "changed_during_test": false
+  },
+  "conclusion": "No normal incoming Key/master Volume setter established. Recognize reports without treating them as commands.",
+  "live_writes": [],
+  "read_only_queries": [
+    "identity",
+    "sound",
+    "bass",
+    "chord-voicing",
+    "bass-voicing"
+  ]
+}

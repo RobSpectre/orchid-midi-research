@@ -1,0 +1,1780 @@
+{
+  "firmware_sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f",
+  "execution": "Actual channel/CC receiver, guarded offline emulator, synthetic state",
+  "live_writes_sent": false,
+  "receiver_cases": [
+    {
+      "channel": 1,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 1,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 2,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 3,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 4,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 5,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 6,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 7,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 8,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 9,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 10,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 11,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 12,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 13,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 14,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 15,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 7,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 7,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 7,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 7,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 107,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 107,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 107,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 107,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 108,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 108,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 108,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 108,
+      "value": 127,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 113,
+      "value": 0,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 113,
+      "value": 1,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 113,
+      "value": 85,
+      "dsp_state_changed": false
+    },
+    {
+      "channel": 16,
+      "cc": 113,
+      "value": 127,
+      "dsp_state_changed": false
+    }
+  ],
+  "key_report_labels": [
+    {
+      "report_value": 0,
+      "firmware_root_label": "C",
+      "quality": "Major"
+    },
+    {
+      "report_value": 1,
+      "firmware_root_label": "C#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 2,
+      "firmware_root_label": "D~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 3,
+      "firmware_root_label": "D",
+      "quality": "Major"
+    },
+    {
+      "report_value": 4,
+      "firmware_root_label": "D#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 5,
+      "firmware_root_label": "E~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 6,
+      "firmware_root_label": "E",
+      "quality": "Major"
+    },
+    {
+      "report_value": 7,
+      "firmware_root_label": "E#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 8,
+      "firmware_root_label": "F~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 9,
+      "firmware_root_label": "F",
+      "quality": "Major"
+    },
+    {
+      "report_value": 10,
+      "firmware_root_label": "F#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 11,
+      "firmware_root_label": "G~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 12,
+      "firmware_root_label": "G",
+      "quality": "Major"
+    },
+    {
+      "report_value": 13,
+      "firmware_root_label": "G#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 14,
+      "firmware_root_label": "A~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 15,
+      "firmware_root_label": "A",
+      "quality": "Major"
+    },
+    {
+      "report_value": 16,
+      "firmware_root_label": "A#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 17,
+      "firmware_root_label": "B~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 18,
+      "firmware_root_label": "B",
+      "quality": "Major"
+    },
+    {
+      "report_value": 19,
+      "firmware_root_label": "B#",
+      "quality": "Major"
+    },
+    {
+      "report_value": 20,
+      "firmware_root_label": "C~",
+      "quality": "Major"
+    },
+    {
+      "report_value": 21,
+      "firmware_root_label": "C",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 22,
+      "firmware_root_label": "C#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 23,
+      "firmware_root_label": "D~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 24,
+      "firmware_root_label": "D",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 25,
+      "firmware_root_label": "D#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 26,
+      "firmware_root_label": "E~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 27,
+      "firmware_root_label": "E",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 28,
+      "firmware_root_label": "E#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 29,
+      "firmware_root_label": "F~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 30,
+      "firmware_root_label": "F",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 31,
+      "firmware_root_label": "F#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 32,
+      "firmware_root_label": "G~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 33,
+      "firmware_root_label": "G",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 34,
+      "firmware_root_label": "G#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 35,
+      "firmware_root_label": "A~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 36,
+      "firmware_root_label": "A",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 37,
+      "firmware_root_label": "A#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 38,
+      "firmware_root_label": "B~",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 39,
+      "firmware_root_label": "B",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 40,
+      "firmware_root_label": "B#",
+      "quality": "Minor"
+    },
+    {
+      "report_value": 41,
+      "firmware_root_label": "C~",
+      "quality": "Minor"
+    }
+  ],
+  "key": {
+    "selection": "Controller+0x38; setter 0x08034954; emits CC107",
+    "enabled": "Controller+0x3c; setter 0x08034AE8; emits CC108",
+    "other_writers": "Session-state loader 0x08035408 writes key and enable fields; called from stored-state loader 0x0803B2xx/0x0803B3xx.",
+    "preset_recall": "Sound-select route loads only Perform metadata +0x24/+0x25, not Key state.",
+    "incoming_route": "No ordinary incoming MIDI branch to these setters or the session loader identified."
+  },
+  "volume": {
+    "panel_range": [
+      0,
+      99
+    ],
+    "panel_state": "Voice/controller object +4; absolute setter 0x080317CC",
+    "relative_setter": "0x0803182C adds delta then calls absolute setter",
+    "outgoing": "Main rotary handler 0x0803ABF2 emits CC113 with signed step, not current display value.",
+    "audio_gain": "0x080317CC calls veneer 0x080490B0 -> ITCM 0x4154; writes DSP+0x6668 float. Also scales click/beep level via 0x080307F4.",
+    "global_parameter_2": "Writes DSP+0x6B2 and is used as an audio crossfade at ITCM0x3E1A; not the physical master Volume state or its gain coefficient.",
+    "other_writers": "Stored settings loader 0x080326C0 and controller state loader can call the master setter; no normal MIDI dispatch path identified."
+  },
+  "limits": [
+    "Ignored receiver cases are verified offline, not live replay tests.",
+    "Direct-call and state traces do not constitute formal whole-program proof of every computed path.",
+    "Only firmware 3.92 was inspected; no firmware modification or device memory access was attempted.",
+    "No remote Key/master Volume setter is established. Do not substitute oscillator pitch, voice gain, or an unrelated global DSP parameter."
+  ]
+}

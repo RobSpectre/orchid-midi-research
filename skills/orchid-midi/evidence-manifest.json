@@ -67,6 +67,21 @@
       "sha256": "6bad4ad31e012334692370e7eb3a3fce51a5769dd37e070be6c42f65ef883154"
     },
     {
+      "path": "captures/key-volume-live-findings.json",
+      "bytes": 826,
+      "sha256": "11a860aa11b37b1961997abdfe1bd16b2509faa5c3ac69adfecd99b42b821d22"
+    },
+    {
+      "path": "captures/key-volume-panel-2026-10-02.jsonl",
+      "bytes": 436,
+      "sha256": "8b2a98c01887eea7f40fd43d8984d1ef8417189dd14e2c5b505fcf9c3a1c886f"
+    },
+    {
+      "path": "captures/key-volume-route-audit.json",
+      "bytes": 32152,
+      "sha256": "a35c28b37748e4e10b9aa26e1375c855ea4fc89b8397ca06ecc1caeef23871ee"
+    },
+    {
       "path": "captures/loop-recording-connection-check-2026-10-01.jsonl",
       "bytes": 693,
       "sha256": "8d35c9ba4e8f9c40aa2ccd80c7ba477b80f6a9b4937da6f03e8bc7ac791d5b63"

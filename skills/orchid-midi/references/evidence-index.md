@@ -29,3 +29,7 @@ All paths below are relative to the skill root. Original capture files remain un
 ## Perform recall route (October 2)
 
 [Perform workflow](perform.md) reconciles the earlier no-independent-setter finding with the confirmed preset-recall workaround. `captures/perform-preset-live-findings.json` records physical confirmation and restoration; `captures/perform-preset-route-audit.json` records the guarded offline selector audit. The associated JSONL files preserve the new live traffic.
+
+## Key and master Volume follow-up
+
+`captures/key-volume-panel-2026-10-02.jsonl` is the new physical Volume capture; `key-volume-live-findings.json` records the owner’s 83/85 and Key-Off observations. `key-volume-route-audit.json` records the reproducible offline receiver runs and native state traces from `research/audit_key_volume_routes.py`. [Interpretation](key-volume.md) explicitly separates reporting from remote setting.
