@@ -5,6 +5,8 @@ Install once to control the researched Telepathic Orchid USB MIDI interface on *
 ```sh
 pipx install .
 orchid-midi ports
+orchid-midi sound "Ghost"
+orchid-midi bass "Fuzzy"
 orchid-midi filter 25
 orchid-midi set sound FX1TYPE PHASER
 orchid-midi set sound FX1P2 63
@@ -17,7 +19,7 @@ Alternatively use `python -m pip install .` in a virtual environment or `uv tool
 ## What it exposes
 
 - All135 Sound/Bass parameter entries by name and raw range:134 configurable settings per voice plus read-only version metadata. Oscillators, envelopes, LFOs, modulation routes, filters, effects/reverb, VA/FM/Reed Piano options.
-- Sound presets1–100, Bass presets1–12, chord/bass voicing; bass-enable and FX-lock toggles.
+- Sound presets1–100 and Bass presets1–12 by full name or number, chord/bass voicing; bass-enable and FX-lock toggles.
 - Firmware-bounded indexed drum/global DSP parameters, standard voice MIDI controls and bounded note playback.
 - Identity, preset/voicing queries, passive JSONL capture, automatic port selection and saved endpoint preferences.
 - Validated JSON configuration files, dry runs, enum names, raw/normalized/percent values, machine-readable capabilities.
@@ -37,6 +39,8 @@ The failed maintenance diagnostic remains blocked; no raw replay, flash or maint
 ## Agent installation
 
 Copy the full [`skills/orchid-midi`](skills/orchid-midi) folder into any harness's skill directory and install its Python package once (`pipx install /path/to/orchid-midi`). If the harness does not discover skills, point it at [`SKILL.md`](skills/orchid-midi/SKILL.md). The skill explicitly requires the Python CLI for all device operations and prohibits falling back to shell MIDI commands. Both the repository root and the standalone extracted skill folder are installable.
+
+The [explicit name map](skills/orchid-midi/references/names.md) lists every factory Sound, Bass, Perform and FX label. Run `orchid-midi presets` to inspect the same machine-readable catalog.
 
 The [CLI reference](skills/orchid-midi/references/cli.md) documents every command and the configuration schema. [The evidence index](skills/orchid-midi/references/evidence-index.md) links original captures and firmware/Pistil traces.
 

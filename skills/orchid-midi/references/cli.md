@@ -1,4 +1,4 @@
-# Python CLI reference (0.2.0)
+# Python CLI reference (0.2.1)
 
 Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchid-midi` executable on macOS, Linux and Windows. CLI stdout is JSON/JSONL; errors are JSON on stderr and exit 2. Interrupted operations exit 130. Arguments are validated before MIDI access. Read-only help, parameters, capabilities and dry runs need no device or backend import.
 
@@ -9,13 +9,14 @@ Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchi
 | `ports` (alias `list`) | Input/output indices and exact names, compiled APIs | Native enumeration, no send |
 | `configure`, `config` | Save/show endpoint, API and timing preferences | Host file only |
 | `capabilities` | Machine-readable supported/unresolved operations | Research summary |
+| `presets sound` / `names sound` | Explicit name/slot mappings; also `bass`, `perform`, `fx1`, `fx2`, `all` | Firmware initializer and frontend |
 | `parameters --engine sound` | All names, indices, ranges, defaults and enum labels; `--filter FX` narrows output | Hash-locked Pistil table |
 | `identity` | Manufacturer/version reply; reports whether researched identity matches | Hardware-tested |
 | `status` | Identity, Sound/Bass preset/name, chord/bass voicing | Not a complete state dump |
 | `query TARGET` | `sound`, `bass`, `chord-voicing`, `bass-voicing`, `sound-slots`, `bass-refresh`, `info` | Queries 51/54/52/55/50/53/56 |
 | `listen --seconds 30` | Incoming MIDI JSONL; `--include-clock` includes F8, `--file capture.jsonl` preserves it | Passive input only |
-| `sound NUMBER` | 1–100, including user slots; CLI number is 1-based | 1/2 physically tested; wider range from firmware |
-| `bass NUMBER` | 1–12, 1-based | 7/8 physically tested; wider range from receiver |
+| `sound NAME_OR_NUMBER` | Full name or 1–100, including user slots; CLI number is 1-based | 1/2 physically tested; wider range from firmware |
+| `bass NAME_OR_NUMBER` | Full name or 1–12, 1-based | 7/8 physically tested; wider range from receiver |
 | `chord-voicing RAW` | 1–60 | Hardware-tested examples |
 | `bass-voicing RAW` | 0–48 | Hardware-tested examples |
 | `set ENGINE PARAM VALUE` | Named/indexed sound/bass parameter; bounded indexed drums/global DSP | Static mapping plus recorded FX examples |
@@ -85,8 +86,8 @@ The simple Phaser/Chorus shortcuts only change the amount index; they do not sil
 ```json
 {
   "schema_version": 1,
-  "sound_preset": 1,
-  "bass_preset": 7,
+  "sound_preset": "Orchid EP",
+  "bass_preset": "RP chill bass",
   "chord_voicing": 24,
   "bass_voicing": 23,
   "parameters": {
@@ -95,6 +96,8 @@ The simple Phaser/Chorus shortcuts only change the amount index; they do not sil
   }
 }
 ```
+
+Preset fields accept a full preset name or a 1-based number. See [names.md](names.md) for the complete mapping. Name matching ignores case, accents, punctuation and spacing, but never guesses partial or misspelled names. User Sound labels address fixed slots; custom names stored on a particular device are not in the bundled catalog.
 
 Omit everything you do not want changed. Values use raw integers or enum names. The whole file validates before port access. Presets precede voicing and parameters; model/effect types precede dependent parameters even if the JSON order differs. Invalid fields, duplicate aliases and unsupported settings fail without sending any packet. Only supplied settings are sent; no default reset occurs.
 

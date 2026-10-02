@@ -1,10 +1,13 @@
 """Pure packet construction and response decoding. No hardware imports."""
 import json
 import math
+import re
+import unicodedata
 from importlib.resources import files
 
 CATALOG = json.loads(files(__package__).joinpath('parameters.json').read_text())
 PARAMETERS = CATALOG['parameters']
+PRESETS = json.loads(files(__package__).joinpath('presets.json').read_text())
 ENGINES = {'sound':0, 'treble':0, 'bass':1, 'drums':2, 'global':3}
 LIMITS = {0:134, 1:134, 2:52, 3:35}
 ALIASES = {'FILTER':'CUTOFF', 'REVERB':'REVSEND', 'PHASER':'FX1P2', 'CHORUS':'FX2P2'}
@@ -103,8 +106,25 @@ def parameter_packet(engine, name, value, scale='raw'):
         evidence='hardware-verified-examples' if e==0 and index in (68,102,109,114) else row['evidence'])
 
 
+def name_key(value):
+    # Case, accents, punctuation and spacing do not change an otherwise exact name.
+    normalized=unicodedata.normalize('NFKD',value).casefold()
+    return re.sub(r'[^a-z0-9]', '', normalized)
+
+
+def resolve_preset(voice, value):
+    if voice not in ('sound','bass'):raise ValueError('Preset voice must be sound or bass')
+    if isinstance(value,str):
+        try:int(value)
+        except ValueError:
+            matches=[row['number'] for row in PRESETS[voice] if name_key(row['name'])==name_key(value)]
+            if len(matches)==1:return matches[0]
+            raise ValueError(f'Unknown or ambiguous {voice} preset {value!r}; run orchid-midi presets {voice}')
+    return integer(value,1,100 if voice=='sound' else 12,f'{voice} preset')
+
+
 def preset_packet(voice, number):
-    number=integer(number,1,100 if voice=='sound' else 12,f'{voice} preset')
+    number=resolve_preset(voice,number)
     return vendor(0x35 if voice=='sound' else 0x3f,[number-1])
 
 
@@ -140,7 +160,9 @@ def configuration_plan(config):
     plan=[]
     for voice in ('sound','bass'):
         key=f'{voice}_preset'
-        if key in config:plan.append((preset_packet(voice,config[key]),{'operation':key,'value':config[key]}))
+        if key in config:
+            number=resolve_preset(voice,config[key])
+            plan.append((preset_packet(voice,number),{'operation':key,'preset':number,'name':PRESETS[voice][number-1]['name']}))
     for voice in ('chord','bass'):
         key=f'{voice}_voicing'
         if key in config:plan.append((voicing_packet(voice,config[key]),{'operation':key,'value':config[key]}))

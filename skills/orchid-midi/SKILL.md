@@ -9,7 +9,7 @@ description: Install and use the cross-platform Python orchid-midi CLI to contro
 
 ## Install once, then use
 
-From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.2.0 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
+From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.2.1 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
 
 ```sh
 orchid-midi ports
@@ -19,6 +19,10 @@ orchid-midi identity
 ```
 
 The backend is python-rtmidi: CoreMIDI on macOS, ALSA/JACK on Linux, WinMM on Windows. One matching Orchid endpoint is detected automatically. If multiple ports match, use the exact names or indices returned by `ports`; save them once with `configure --input ... --output ...`. Fix installation/permissions/port selection errors in this CLI instead of falling back to OS shell MIDI tools.
+
+## Select by name
+
+Read [the explicit name mappings](references/names.md) for all 70 factory Sounds, 30 default user-slot labels, 12 Bass presets, Perform labels and FX types. Prefer names to integers: `orchid-midi sound "Ghost"`, `orchid-midi bass "Fuzzy"`. `orchid-midi presets sound` (or `names sound`) lists the bundled mapping without accessing the device. Name selection also works in JSON profiles. Perform labels are reference-only; their table indices are not MIDI commands.
 
 ## Control
 

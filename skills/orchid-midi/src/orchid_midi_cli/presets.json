@@ -1,0 +1,951 @@
+{
+  "firmware_sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f",
+  "firmware": "3.92 / device display v3.9.2",
+  "provenance": {
+    "initializer": "0x0803DBA4",
+    "sound_table": "0x24048100",
+    "bass_table": "0x24047F20",
+    "preset_stride": 40,
+    "perform_label_table": "0x0804915C",
+    "perform_label_stride": 16,
+    "fx_names": "saved Pistil 1.0.2 frontend cB.fx1/cB.fx2"
+  },
+  "sound": [
+    {
+      "number": 1,
+      "midi_index": 0,
+      "name": "Orchid EP",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 2,
+      "midi_index": 1,
+      "name": "Ghost",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 3,
+      "midi_index": 2,
+      "name": "Analog Flower",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 4,
+      "midi_index": 3,
+      "name": "Cherry Blossom",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 5,
+      "midi_index": 4,
+      "name": "Eraserhead",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 6,
+      "midi_index": 5,
+      "name": "Whoosh",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 7,
+      "midi_index": 6,
+      "name": "Neighbour",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 8,
+      "midi_index": 7,
+      "name": "Diamond Cave",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 9,
+      "midi_index": 8,
+      "name": "Creepy Crawlies",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 10,
+      "midi_index": 9,
+      "name": "Organ Stab",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 11,
+      "midi_index": 10,
+      "name": "Porcelain Doll",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 12,
+      "midi_index": 11,
+      "name": "Malarky",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 13,
+      "midi_index": 12,
+      "name": "Smokey EP",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 14,
+      "midi_index": 13,
+      "name": "Hymn",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 15,
+      "midi_index": 14,
+      "name": "Opening Credits",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 16,
+      "midi_index": 15,
+      "name": "Raphael's Defeat",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 17,
+      "midi_index": 16,
+      "name": "Rich Toy Piano",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 18,
+      "midi_index": 17,
+      "name": "Trembling Silver",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 19,
+      "midi_index": 18,
+      "name": "Tarbox Whirl",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 20,
+      "midi_index": 19,
+      "name": "Talkie",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 21,
+      "midi_index": 20,
+      "name": "Late Five",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 22,
+      "midi_index": 21,
+      "name": "Breakfast",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 23,
+      "midi_index": 22,
+      "name": "FM Harp One",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 24,
+      "midi_index": 23,
+      "name": "Distarp",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 25,
+      "midi_index": 24,
+      "name": "Space Harpsi",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 26,
+      "midi_index": 25,
+      "name": "Organ With Fifth",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 27,
+      "midi_index": 26,
+      "name": "Fighter Jet",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 28,
+      "midi_index": 27,
+      "name": "Orchid Forest",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 29,
+      "midi_index": 28,
+      "name": "Rise And Shine",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 30,
+      "midi_index": 29,
+      "name": "Shouting",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 31,
+      "midi_index": 30,
+      "name": "Nebula Swamp",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 32,
+      "midi_index": 31,
+      "name": "Frodo",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 33,
+      "midi_index": 32,
+      "name": "Piano Lesson",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 34,
+      "midi_index": 33,
+      "name": "90s Hit",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 35,
+      "midi_index": 34,
+      "name": "Abyss",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 36,
+      "midi_index": 35,
+      "name": "Silo",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 37,
+      "midi_index": 36,
+      "name": "Waiting",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 38,
+      "midi_index": 37,
+      "name": "Pulsar",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 39,
+      "midi_index": 38,
+      "name": "Saw Stairs",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 40,
+      "midi_index": 39,
+      "name": "SNES",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 41,
+      "midi_index": 40,
+      "name": "Serengeti",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 42,
+      "midi_index": 41,
+      "name": "Nicholson",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 43,
+      "midi_index": 42,
+      "name": "Upsidedown",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 44,
+      "midi_index": 43,
+      "name": "Solaw",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 45,
+      "midi_index": 44,
+      "name": "Basement",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 46,
+      "midi_index": 45,
+      "name": "Warp World",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 47,
+      "midi_index": 46,
+      "name": "Pigs",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 48,
+      "midi_index": 47,
+      "name": "Garden Gnome",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 49,
+      "midi_index": 48,
+      "name": "FM Bongo",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 50,
+      "midi_index": 49,
+      "name": "Arctic",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 51,
+      "midi_index": 50,
+      "name": "Cat Choir",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 52,
+      "midi_index": 51,
+      "name": "Slow Strings",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 53,
+      "midi_index": 52,
+      "name": "Molly Buzz",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 54,
+      "midi_index": 53,
+      "name": "Scooby",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 55,
+      "midi_index": 54,
+      "name": "Steel Drum",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 56,
+      "midi_index": 55,
+      "name": "In Reverse",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 57,
+      "midi_index": 56,
+      "name": "Falling Star",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 58,
+      "midi_index": 57,
+      "name": "Stylo Foam",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 59,
+      "midi_index": 58,
+      "name": "Space Sitar",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 60,
+      "midi_index": 59,
+      "name": "Access",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 61,
+      "midi_index": 60,
+      "name": "Dead Punk",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 62,
+      "midi_index": 61,
+      "name": "Lemon",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 63,
+      "midi_index": 62,
+      "name": "Logical",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 64,
+      "midi_index": 63,
+      "name": "DX Guitar",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 65,
+      "midi_index": 64,
+      "name": "Diapason",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 66,
+      "midi_index": 65,
+      "name": "Whoops A Daisy",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 67,
+      "midi_index": 66,
+      "name": "Trout",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 68,
+      "midi_index": 67,
+      "name": "Plumerai La Tete",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 69,
+      "midi_index": 68,
+      "name": "Bitron",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 70,
+      "midi_index": 69,
+      "name": "Cosmic Day Spa",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 71,
+      "midi_index": 70,
+      "name": "User Sound 01",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 72,
+      "midi_index": 71,
+      "name": "User Sound 02",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 73,
+      "midi_index": 72,
+      "name": "User Sound 03",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 74,
+      "midi_index": 73,
+      "name": "User Sound 04",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 75,
+      "midi_index": 74,
+      "name": "User Sound 05",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 76,
+      "midi_index": 75,
+      "name": "User Sound 06",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 77,
+      "midi_index": 76,
+      "name": "User Sound 07",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 78,
+      "midi_index": 77,
+      "name": "User Sound 08",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 79,
+      "midi_index": 78,
+      "name": "User Sound 09",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 80,
+      "midi_index": 79,
+      "name": "User Sound 10",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 81,
+      "midi_index": 80,
+      "name": "User Sound 11",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 82,
+      "midi_index": 81,
+      "name": "User Sound 12",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 83,
+      "midi_index": 82,
+      "name": "User Sound 13",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 84,
+      "midi_index": 83,
+      "name": "User Sound 14",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 85,
+      "midi_index": 84,
+      "name": "User Sound 15",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 86,
+      "midi_index": 85,
+      "name": "User Sound 16",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 87,
+      "midi_index": 86,
+      "name": "User Sound 17",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 88,
+      "midi_index": 87,
+      "name": "User Sound 18",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 89,
+      "midi_index": 88,
+      "name": "User Sound 19",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 90,
+      "midi_index": 89,
+      "name": "User Sound 20",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 91,
+      "midi_index": 90,
+      "name": "User Sound 21",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 92,
+      "midi_index": 91,
+      "name": "User Sound 22",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 93,
+      "midi_index": 92,
+      "name": "User Sound 23",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 94,
+      "midi_index": 93,
+      "name": "User Sound 24",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 95,
+      "midi_index": 94,
+      "name": "User Sound 25",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 96,
+      "midi_index": 95,
+      "name": "User Sound 26",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 97,
+      "midi_index": 96,
+      "name": "User Sound 27",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 98,
+      "midi_index": 97,
+      "name": "User Sound 28",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 99,
+      "midi_index": 98,
+      "name": "User Sound 29",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    },
+    {
+      "number": 100,
+      "midi_index": 99,
+      "name": "User Sound 30",
+      "kind": "user-slot-default-label",
+      "remote_selectable": true
+    }
+  ],
+  "bass": [
+    {
+      "number": 1,
+      "midi_index": 0,
+      "name": "PWM bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 2,
+      "midi_index": 1,
+      "name": "RP bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 3,
+      "midi_index": 2,
+      "name": "Klub bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 4,
+      "midi_index": 3,
+      "name": "PBass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 5,
+      "midi_index": 4,
+      "name": "Thriller",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 6,
+      "midi_index": 5,
+      "name": "Orch808",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 7,
+      "midi_index": 6,
+      "name": "RP chill bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 8,
+      "midi_index": 7,
+      "name": "Fuzzy",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 9,
+      "midi_index": 8,
+      "name": "Fifth Organ Bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 10,
+      "midi_index": 9,
+      "name": "Meadow Bass",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 11,
+      "midi_index": 10,
+      "name": "String Split",
+      "kind": "factory",
+      "remote_selectable": true
+    },
+    {
+      "number": 12,
+      "midi_index": 11,
+      "name": "Rezdist bass",
+      "kind": "factory",
+      "remote_selectable": true
+    }
+  ],
+  "perform": [
+    {
+      "table_index": 0,
+      "name": "Off",
+      "remote_selectable": false,
+      "menu_label": null,
+      "note": "Off state label, not the menu Exit item."
+    },
+    {
+      "table_index": 1,
+      "name": "Strum",
+      "remote_selectable": false,
+      "menu_label": "Strum",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 2,
+      "name": "Strum 2 Oct",
+      "remote_selectable": false,
+      "menu_label": "Strum 2 Octaves",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 3,
+      "name": "Slop",
+      "remote_selectable": false,
+      "menu_label": "Slop",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 4,
+      "name": "Arpeggiate",
+      "remote_selectable": false,
+      "menu_label": "Arpeggiate",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 5,
+      "name": "Arp 2 Octaves",
+      "remote_selectable": false,
+      "menu_label": "Arp 2 Octaves",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 6,
+      "name": "Pattern",
+      "remote_selectable": false,
+      "menu_label": "Pattern",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 7,
+      "name": "Harp",
+      "remote_selectable": false,
+      "menu_label": "Harp",
+      "note": "Physical Perform mode; incoming setter not established."
+    },
+    {
+      "table_index": 8,
+      "name": "Two Note",
+      "remote_selectable": false,
+      "menu_label": null,
+      "note": "Internal label; not present in the inspected normal Perform menu."
+    }
+  ],
+  "fx1": [
+    {
+      "raw": 0,
+      "name": "OFF",
+      "remote_selectable": true
+    },
+    {
+      "raw": 1,
+      "name": "CHORUS",
+      "remote_selectable": true
+    },
+    {
+      "raw": 2,
+      "name": "ENSEMBLE",
+      "remote_selectable": true
+    },
+    {
+      "raw": 3,
+      "name": "PHASER",
+      "remote_selectable": true
+    },
+    {
+      "raw": 4,
+      "name": "FLANGER",
+      "remote_selectable": true
+    },
+    {
+      "raw": 5,
+      "name": "DRIVE",
+      "remote_selectable": true
+    },
+    {
+      "raw": 6,
+      "name": "TREMOLO",
+      "remote_selectable": true
+    }
+  ],
+  "fx2": [
+    {
+      "raw": 0,
+      "name": "OFF",
+      "remote_selectable": true
+    },
+    {
+      "raw": 1,
+      "name": "CHORUS",
+      "remote_selectable": true
+    },
+    {
+      "raw": 2,
+      "name": "ENSEMBLE",
+      "remote_selectable": true
+    },
+    {
+      "raw": 3,
+      "name": "PHASER",
+      "remote_selectable": true
+    },
+    {
+      "raw": 4,
+      "name": "FLANGER",
+      "remote_selectable": true
+    },
+    {
+      "raw": 5,
+      "name": "DRIVE",
+      "remote_selectable": true
+    },
+    {
+      "raw": 6,
+      "name": "TREMOLO",
+      "remote_selectable": true
+    },
+    {
+      "raw": 7,
+      "name": "DELAY",
+      "remote_selectable": true
+    }
+  ],
+  "notes": [
+    "Preset numbers are 1-based; MIDI indices are 0-based.",
+    "User Sound names are default slot labels, not a readback of customized hardware names.",
+    "Perform table indices are NOT MIDI setter values. No remote Perform setter was found.",
+    "Off and Two Note are internal state labels, not additional verified selectable menu entries."
+  ]
+}

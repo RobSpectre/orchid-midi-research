@@ -14,7 +14,7 @@ class Packaging(unittest.TestCase):
         catalog=json.loads(files('orchid_midi_cli').joinpath('parameters.json').read_text())
         self.assertEqual(len(catalog['parameters']),135)
         self.assertEqual(catalog['parameters'][134]['name'],'RPTSTEREO')
-        self.assertEqual(__version__,'0.2.0')
+        self.assertEqual(__version__,'0.2.1')
 
     def test_installed_entrypoint_handles_dry_run_without_midi(self):
         output=io.StringIO()
