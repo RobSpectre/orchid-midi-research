@@ -8,6 +8,7 @@ from importlib.resources import files
 CATALOG = json.loads(files(__package__).joinpath('parameters.json').read_text())
 PARAMETERS = CATALOG['parameters']
 PRESETS = json.loads(files(__package__).joinpath('presets.json').read_text())
+FACTORY_VOICES = json.loads(files(__package__).joinpath('factory_voices.json').read_text())
 ENGINES = {'sound':0, 'treble':0, 'bass':1, 'drums':2, 'global':3}
 LIMITS = {0:134, 1:134, 2:52, 3:35}
 ALIASES = {'FILTER':'CUTOFF', 'REVERB':'REVSEND', 'PHASER':'FX1P2', 'CHORUS':'FX2P2'}
@@ -16,7 +17,7 @@ QUERIES = {'sound':0x51,'bass':0x54,'chord-voicing':0x52,'bass-voicing':0x55,
 # 0x53 produces a leading 0 response and then 0x54, not a 0x53 response.
 RESPONSES = {**QUERIES, 'bass-refresh':0x54}
 UNSUPPORTED = {
-    'perform':'CC103/104 are outgoing reports; no independent incoming setter found.',
+    'perform':'No independent incoming setter found. Use perform-options and perform-preset for the limited preset-recall workaround; this changes the Sound slot.',
     'key':'CC107/108 reports did not work as incoming controls.',
     'loop':'Incoming Start/Stop did not control the physical looper.',
     'bpm':'Incoming CC112 and clock did not change hardware tempo or start drums.',
@@ -126,6 +127,28 @@ def resolve_preset(voice, value):
 def preset_packet(voice, number):
     number=resolve_preset(voice,number)
     return vendor(0x35 if voice=='sound' else 0x3f,[number-1])
+
+
+def factory_voice(value):
+    number=resolve_preset('sound',value)
+    if number>70:raise ValueError('Perform workaround requires a factory Sound (1–70); user-slot data is not known')
+    return FACTORY_VOICES['sound'][number-1]
+
+
+def perform_preset_plan(donor, timbre=None):
+    source=factory_voice(donor)
+    plan=[(preset_packet('sound',source['number']),{
+        'operation':'perform-preset','preset':source['number'],'name':source['name'],
+        'expected_perform':source['perform'],'changes_sound_slot':True,
+        'evidence':'hardware-verified-Neighbour; other donors firmware-derived'})]
+    if timbre is not None:
+        target=factory_voice(timbre)
+        profile={'parameters':{'sound':{row['name']:target['parameters'][row['index']]
+                                      for row in PARAMETERS if row['writable']}}}
+        for packet,metadata in configuration_plan(profile):
+            plan.append((packet,{**metadata,'operation':'factory-timbre','factory_name':target['name'],
+                                 'selected_slot_remains':source['number']}))
+    return plan
 
 
 def voicing_packet(voice, value):

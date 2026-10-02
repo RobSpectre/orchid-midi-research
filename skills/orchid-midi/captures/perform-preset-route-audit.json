@@ -1,0 +1,594 @@
+{
+  "firmware_sha256": "bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f",
+  "method": "Guarded offline preset-selector execution with explicit boundary stubs",
+  "normal_command": "0x35 Sound select, zero-based slot",
+  "route": [
+    "0x080461E8 SysEx branch",
+    "0x08035118 selector",
+    "0x0803501C load",
+    "0x080350F2 calls mode setter with record+0x24",
+    "0x0803510C calls amount setter with record+0x25"
+  ],
+  "cc_report_receive_targets": {
+    "103": "0x4c86",
+    "104": "0x4c86"
+  },
+  "stubbed_functions": {
+    "0x8033c2c": "load_synth",
+    "0x8034e00": "perform_mode",
+    "0x8034c88": "perform_amount",
+    "0x8031f68": "outgoing_cc",
+    "0x8032038": "outgoing_sysex"
+  },
+  "limitations": [
+    "No live MIDI is sent by this audit.",
+    "Mode and amount setters are intercepted, not executed; only caller arguments are verified.",
+    "Selecting a preset also reloads its synth parameters and changes the selected slot.",
+    "This does not provide arbitrary mode/amount selection independent of a preset.",
+    "User-slot metadata may differ from factory initialization and is not assumed.",
+    "Normal bulk command 0x34 writes only synth parameters through 0x08032148; it is not a Perform setter.",
+    "Command 0x36 persists a user preset; maintenance and persistent writes are not used."
+  ],
+  "factory_presets": [
+    {
+      "number": 1,
+      "name": "Orchid EP",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 2,
+      "name": "Ghost",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 3,
+      "name": "Analog Flower",
+      "perform_mode": 5,
+      "perform_name": "Arp 2 Octaves",
+      "perform_amount_raw": 4,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 4,
+      "name": "Cherry Blossom",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 5,
+      "name": "Eraserhead",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 6,
+      "name": "Whoosh",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 7,
+      "name": "Neighbour",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 2,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 8,
+      "name": "Diamond Cave",
+      "perform_mode": 5,
+      "perform_name": "Arp 2 Octaves",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 9,
+      "name": "Creepy Crawlies",
+      "perform_mode": 2,
+      "perform_name": "Strum 2 Oct",
+      "perform_amount_raw": 3,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 10,
+      "name": "Organ Stab",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 11,
+      "name": "Porcelain Doll",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 12,
+      "name": "Malarky",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 13,
+      "name": "Smokey EP",
+      "perform_mode": 3,
+      "perform_name": "Slop",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 14,
+      "name": "Hymn",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 9,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 15,
+      "name": "Opening Credits",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 16,
+      "name": "Raphael's Defeat",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 17,
+      "name": "Rich Toy Piano",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 18,
+      "name": "Trembling Silver",
+      "perform_mode": 7,
+      "perform_name": "Harp",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 19,
+      "name": "Tarbox Whirl",
+      "perform_mode": 7,
+      "perform_name": "Harp",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 20,
+      "name": "Talkie",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 21,
+      "name": "Late Five",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 22,
+      "name": "Breakfast",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 23,
+      "name": "FM Harp One",
+      "perform_mode": 2,
+      "perform_name": "Strum 2 Oct",
+      "perform_amount_raw": 5,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 24,
+      "name": "Distarp",
+      "perform_mode": 5,
+      "perform_name": "Arp 2 Octaves",
+      "perform_amount_raw": 4,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 25,
+      "name": "Space Harpsi",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 26,
+      "name": "Organ With Fifth",
+      "perform_mode": 2,
+      "perform_name": "Strum 2 Oct",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 27,
+      "name": "Fighter Jet",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 28,
+      "name": "Orchid Forest",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 3,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 29,
+      "name": "Rise And Shine",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 30,
+      "name": "Shouting",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 31,
+      "name": "Nebula Swamp",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 32,
+      "name": "Frodo",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 33,
+      "name": "Piano Lesson",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 4,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 34,
+      "name": "90s Hit",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 8,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 35,
+      "name": "Abyss",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 36,
+      "name": "Silo",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 6,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 37,
+      "name": "Waiting",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 2,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 38,
+      "name": "Pulsar",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 7,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 39,
+      "name": "Saw Stairs",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 3,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 40,
+      "name": "SNES",
+      "perform_mode": 2,
+      "perform_name": "Strum 2 Oct",
+      "perform_amount_raw": 7,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 41,
+      "name": "Serengeti",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 42,
+      "name": "Nicholson",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 43,
+      "name": "Upsidedown",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 6,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 44,
+      "name": "Solaw",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 45,
+      "name": "Basement",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 46,
+      "name": "Warp World",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 6,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 47,
+      "name": "Pigs",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 48,
+      "name": "Garden Gnome",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 7,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 49,
+      "name": "FM Bongo",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 6,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 50,
+      "name": "Arctic",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 5,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 51,
+      "name": "Cat Choir",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 52,
+      "name": "Slow Strings",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 53,
+      "name": "Molly Buzz",
+      "perform_mode": 3,
+      "perform_name": "Slop",
+      "perform_amount_raw": 1,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 54,
+      "name": "Scooby",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 55,
+      "name": "Steel Drum",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 5,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 56,
+      "name": "In Reverse",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 57,
+      "name": "Falling Star",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 58,
+      "name": "Stylo Foam",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 59,
+      "name": "Space Sitar",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 10,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 60,
+      "name": "Access",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 61,
+      "name": "Dead Punk",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 62,
+      "name": "Lemon",
+      "perform_mode": 6,
+      "perform_name": "Pattern",
+      "perform_amount_raw": 13,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 63,
+      "name": "Logical",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 64,
+      "name": "DX Guitar",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 5,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 65,
+      "name": "Diapason",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 66,
+      "name": "Whoops A Daisy",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 67,
+      "name": "Trout",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 68,
+      "name": "Plumerai La Tete",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 69,
+      "name": "Bitron",
+      "perform_mode": 4,
+      "perform_name": "Arpeggiate",
+      "perform_amount_raw": 5,
+      "selector_calls_verified": true
+    },
+    {
+      "number": 70,
+      "name": "Cosmic Day Spa",
+      "perform_mode": 1,
+      "perform_name": "Strum",
+      "perform_amount_raw": 0,
+      "selector_calls_verified": true
+    }
+  ]
+}

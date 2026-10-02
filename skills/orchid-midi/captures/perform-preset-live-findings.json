@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-02",
+  "firmware": "v3.9.2 / 3.92",
+  "baseline": {
+    "sound": "Pulsar",
+    "sound_number": 38,
+    "bass": "String Split",
+    "bass_number": 11,
+    "chord_voicing": 24,
+    "bass_voicing": 23,
+    "user_report": "No sound/FX edits since loading",
+    "initial_perform": "Not independently read before test"
+  },
+  "steps": [
+    {
+      "action": "Sound select Neighbour",
+      "packet": "f0 00 22 0c 01 35 06 16 f7",
+      "expected": "Arpeggiate 02",
+      "owner_confirmation": "It does."
+    },
+    {
+      "action": "Apply all 134 writable Pulsar factory voice parameters without Sound select",
+      "capture": "perform-pulsar-timbre-write.jsonl",
+      "owner_confirmation": "Perform remained Arpeggiate 02 and sound was Pulsar: It does."
+    },
+    {
+      "action": "Restore Sound Pulsar",
+      "capture": "perform-pulsar-restore-write.jsonl",
+      "midi_readback": {
+        "preset": 38,
+        "name": "Pulsar"
+      },
+      "owner_confirmation": "Pattern 07 and sound back to normal: It does."
+    }
+  ],
+  "conclusion": "Preset-mediated Perform control works; timbre can be changed separately with normal synth parameter writes. No independent arbitrary mode/amount setter established.",
+  "no_persistent_writes": true,
+  "no_maintenance_commands": true
+}

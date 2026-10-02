@@ -16,7 +16,7 @@ The blob is an updater stream, not an ordinary MIDI recording. Decode it offline
 - NRPN parameters target synth engines <=2, indices <=134. Notes on channels1/2 select treble/bass voices; no drum channel10 receiver was found in this path.
 - SysEx 34/35: sound bulk/select; 3E/3F: bass bulk/select; 43: bass toggle; 45/46: voicing; 47: DSP parameter; 48: FX lock; 50..56: queries. Existence in firmware does not establish a verified live CLI operation.
 - Command47 engine3 indices0..35 are global DSP/drum FX, not the missing panel transport setters.
-- Perform has a possible indirect route through saved Sound preset metadata, offsets +24/+25. No transient Perform setter was established; persistent preset writing was not tested or authorized as a workaround.
+- Perform has a confirmed indirect route through Sound preset metadata, offsets +0x24/+0x25. Remote Neighbour recall loaded Arpeggiate 02; applying Pulsar factory synth parameters retained that Perform setting. See [the tested workaround](perform.md). An independent transient setter remains unresolved; persistent preset writing is not used.
 
 The native BPM routine at 0x08034C18 writes controller+0x58C and updates clock/delay fields using floating-point operations. It requires a correct object pointer and call context. An internal routine address is not a MIDI command and must not be invoked through maintenance. `native-tempo-control-trace.asm` is an offline lead only.
 

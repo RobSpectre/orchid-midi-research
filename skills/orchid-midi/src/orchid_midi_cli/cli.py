@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from . import __version__, settings
-from .protocol import (CATALOG, PARAMETERS, PRESETS, resolve_preset, ENGINES, LIMITS, QUERIES, RESPONSES, UNSUPPORTED,
+from .protocol import (CATALOG, PARAMETERS, PRESETS, FACTORY_VOICES, perform_preset_plan, resolve_preset, ENGINES, LIMITS, QUERIES, RESPONSES, UNSUPPORTED,
                        decode, integer, parameter_packet, preset_packet, voicing_packet,
                        vendor, configuration_plan, engine_id)
 from .transport import MidiSession, API_NAMES
@@ -37,6 +37,10 @@ def parser():
     sub('capabilities','List supported controls, evidence and unresolved controls')
     c=sub('presets','List explicit Sound, Bass, Perform and FX name mappings',('names',))
     c.add_argument('category',nargs='?',choices=['all','sound','bass','perform','fx1','fx2'],default='all')
+    sub('perform-options','List factory preset Perform settings available through preset recall; no MIDI access')
+    c=sub('perform-preset','Recall a factory preset for its Perform setting; changes the Sound slot')
+    c.add_argument('donor',help='Factory Sound name or number providing mode and amount')
+    c.add_argument('--timbre',help='Then apply this factory Sound’s synth/FX defaults; donor slot/name remains selected, current edits are not preserved')
     c=sub('parameters','List all parameter names, raw ranges, defaults and enum labels',('catalog',))
     c.add_argument('--engine',default='sound',choices=ENGINES);c.add_argument('--filter',default='')
     c=sub('identity','Request and parse the device identity')
@@ -82,6 +86,7 @@ def build_plan(a):
     if cmd in ('sound','bass'):
         number=resolve_preset(cmd,a.value)
         return [(preset_packet(cmd,number),{'operation':cmd,'preset':number,'name':PRESETS[cmd][number-1]['name'],'evidence':'firmware-initializer-and-recorded-examples'})]
+    if cmd=='perform-preset':return perform_preset_plan(a.donor,a.timbre)
     if cmd in ('chord-voicing','bass-voicing'):return [(voicing_packet(cmd.split('-')[0],a.value),{'operation':cmd,'raw':a.value})]
     if cmd=='set':return [parameter_packet(a.engine,a.parameter,a.value,a.scale)]
     if cmd in ('reverb','filter','phaser','chorus'):return [parameter_packet(a.engine,cmd,a.value,a.scale)]
@@ -129,6 +134,9 @@ def run(a, session_factory=MidiSession):
     cmd=a.command
     # Validate every write before configuration loading or device enumeration.
     plan=build_plan(a)
+    if cmd=='perform-options':
+        emit(options=[{key:row[key] for key in ('number','name','perform')} for row in FACTORY_VOICES['sound']],
+             limitations=FACTORY_VOICES['notes'],independent_setter=False);return 0
     if cmd in ('presets','names'):
         categories=['sound','bass','perform','fx1','fx2'] if a.category=='all' else [a.category]
         emit(firmware=PRESETS['firmware'],notes=PRESETS['notes'],**{key:PRESETS[key] for key in categories});return 0
@@ -136,7 +144,8 @@ def run(a, session_factory=MidiSession):
         emit(version=__version__,backend='python-rtmidi',platforms=['macOS/CoreMIDI','Linux/ALSA or JACK','Windows/WinMM'],
              parameters_per_voice=135,configurable_parameters_per_voice=134,
              engine_index_ranges=LIMITS,presets={'sound':[1,100],'bass':[1,12]},
-             preset_names=True,queries=QUERIES,toggles=['bass','fx-lock'],unsupported=UNSUPPORTED,
+             preset_names=True,perform_workaround='perform-preset DONOR [--timbre FACTORY_SOUND]; changes selected Sound slot',
+             queries=QUERIES,toggles=['bass','fx-lock'],unsupported=UNSUPPORTED,
              verification='Only recorded controls were tested on hardware; others are static mappings.');return 0
     if cmd in ('parameters','catalog'):
         e=engine_id(a.engine)

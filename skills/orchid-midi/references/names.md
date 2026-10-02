@@ -143,7 +143,7 @@ These are the firmware’s default slot labels. Contents and custom names can di
 
 ## Perform labels — reference only
 
-**No working remote Perform setter has been established.** These indices identify entries in the firmware’s internal 16-byte label table, not SysEx values or CC setters. `orchid-midi perform ...` continues to refuse transmission. CC 103/104 reports were not symmetric incoming controls.
+**No independent remote Perform setter has been established.** A [preset-recall workaround](perform.md) is now hardware-confirmed; use `perform-options` for its factory combinations. These indices identify entries in the firmware’s internal 16-byte label table, not SysEx values or CC setters. `orchid-midi perform ...` continues to refuse transmission. CC 103/104 reports were not symmetric incoming controls.
 
 | Internal label | Table index | Physical menu label / interpretation |
 |---|---:|---|
@@ -182,4 +182,4 @@ Reverb is separate: `REVSEND` (send), `REVSIZE` (size), `REVLP` (low-pass), `REV
 - Reproduce preset order and labels: `research/extract_preset_catalog.py` (optional Unicorn dependency, offline only). Firmware SHA-256: `bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f`.
 - Initializer 0x0803DBA4 writes Sound records at 0x24048100 and Bass records at 0x24047F20, stride 40. Perform labels start at 0x0804915C, stride 16.
 - Sound 001/002 and Bass 007/008 match the captured physical checks. Other slot/name mappings are firmware-derived, not individually verified on hardware.
-- Names do not expand supported commands: no remote Perform/Loop/BPM control or maintenance operation is enabled by this catalog.
+- Names do not expand supported commands: no independent Perform setter, Loop/BPM control or maintenance operation is enabled by this catalog.

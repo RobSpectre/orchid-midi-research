@@ -25,3 +25,7 @@ All paths below are relative to the skill root. Original capture files remain un
 ## Preset and mode names
 
 `src/orchid_midi_cli/presets.json` maps all 100 Sound slots, 12 Bass presets, Perform labels and FX enums. [Explicit name mappings](names.md) distinguishes selectable presets from reference-only Perform labels. `research/extract_preset_catalog.py` reconstructs factory slot order from the hash-verified firmware initializer in a guarded offline emulator. `tests/test_names.py` verifies every name-to-packet mapping and rejects unsupported Perform selection.
+
+## Perform recall route (October 2)
+
+[Perform workflow](perform.md) reconciles the earlier no-independent-setter finding with the confirmed preset-recall workaround. `captures/perform-preset-live-findings.json` records physical confirmation and restoration; `captures/perform-preset-route-audit.json` records the guarded offline selector audit. The associated JSONL files preserve the new live traffic.

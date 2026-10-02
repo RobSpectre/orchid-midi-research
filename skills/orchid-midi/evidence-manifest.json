@@ -147,6 +147,31 @@
       "sha256": "48c2615c41fbfc37db866f2cc26c8ff43c4670c8d982f4767b4e599d7b0d2a45"
     },
     {
+      "path": "captures/perform-preset-live-findings.json",
+      "bytes": 1302,
+      "sha256": "7054256b363e52a3fac9db65ccbbedcb948721c71e3fd38aabe4deddebf452b7"
+    },
+    {
+      "path": "captures/perform-preset-neighbour-live.jsonl",
+      "bytes": 635,
+      "sha256": "d90f25591ee165a4b4c8b53fd6dea95f406ba6599f7bf9661c3d20706ddbc00a"
+    },
+    {
+      "path": "captures/perform-preset-route-audit.json",
+      "bytes": 14448,
+      "sha256": "0ff848a76d403aa166c480185185c095ee183e6149a57f959a8937ba1697f470"
+    },
+    {
+      "path": "captures/perform-pulsar-restore-write.jsonl",
+      "bytes": 186,
+      "sha256": "b8a120c5e16f54eb609e0cb5ced8089d1aedf5610b3f91d9397111440a82844f"
+    },
+    {
+      "path": "captures/perform-pulsar-timbre-write.jsonl",
+      "bytes": 25674,
+      "sha256": "3c1d9064cbc9caead207fc2e7b19cce005b62015bea9eb7a1ea237114678d640"
+    },
+    {
       "path": "captures/physical-buttons-round2-2026-10-01.jsonl",
       "bytes": 3229092,
       "sha256": "23427e331a49fb35a4b17549e2955cbea838bd74eb9327790639eca46f8e4765"

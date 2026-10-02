@@ -1,4 +1,4 @@
-# Python CLI reference (0.2.1)
+# Python CLI reference (0.3.0)
 
 Install once using [INSTALL.md](../INSTALL.md). All examples use the same `orchid-midi` executable on macOS, Linux and Windows. CLI stdout is JSON/JSONL; errors are JSON on stderr and exit 2. Interrupted operations exit 130. Arguments are validated before MIDI access. Read-only help, parameters, capabilities and dry runs need no device or backend import.
 
@@ -105,6 +105,10 @@ Application is sequential, **not atomic**. If disconnected partway through, some
 
 ## Unsupported operations
 
-Perform, Key, Loop, BPM, Options, master Volume and drum transport are explicitly rejected. Maintenance, firmware, raw SysEx replay and persistent preset saving are not exposed. Legacy `probe-*` replay commands are not the portable CLI's control API; their old packet builders and recorded negative results remain offline research only.
+Direct `perform MODE AMOUNT`, Key, Loop, BPM, Options, master Volume and drum transport are explicitly rejected. Use the separately documented `perform-preset` workaround for stored factory combinations. Maintenance, firmware, raw SysEx replay and persistent preset saving are not exposed. Legacy `probe-*` replay commands are not the portable CLI's control API; their old packet builders and recorded negative results remain offline research only.
 
 Most expanded parameters have static code evidence, not physical verification. A successful send is reported with `verified: false`; only a matching query reply or a physical observation establishes a result. See [control-map.md](control-map.md) for actual hardware confirmations.
+
+## Perform via a factory preset
+
+`perform-options` lists offline donor names with their stored mode/amount. `perform-preset DONOR [--timbre FACTORY_SOUND]` selects the donor, then optionally applies all 134 writable factory voice parameters with the same validated ordering as `apply`. It changes the selected Sound slot/name and replaces Sound edits; no state backup or persistent saving occurs. `--dry-run` prints the full plan before MIDI access. See [the hardware-tested example and limits](perform.md).

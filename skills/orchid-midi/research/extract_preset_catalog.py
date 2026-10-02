@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SHA256 = 'bc5e8597244a3b7ddbcc2fa0379b48d33d37e668c94d7dd1244e77c560e3936f'
 
 
-def extract():
+def initialized_tables():
     sys.path.insert(0,str(ROOT/'research/vendor'))
     from unicorn import Uc, UC_ARCH_ARM, UC_MODE_THUMB, UC_MODE_MCLASS, UC_HOOK_CODE, UC_HOOK_MEM_WRITE
     from unicorn.arm_const import UC_ARM_REG_SP, UC_ARM_REG_LR, UC_ARM_REG_PC
@@ -32,9 +32,16 @@ def extract():
     def write_guard(emu,access,address,size,value,_):
         if not (0x24000000<=address and address+size<=0x24080000 or 0x20000000<=address and address+size<=0x20020000):
             raise ValueError(f'Write outside emulated SRAM: {address:#x}')
-    u.hook_add(UC_HOOK_CODE,code_guard);u.hook_add(UC_HOOK_MEM_WRITE,write_guard)
+    code_hook=u.hook_add(UC_HOOK_CODE,code_guard)
+    u.hook_add(UC_HOOK_MEM_WRITE,write_guard)
     u.emu_start(0x0803dba5,stop,count=20000)
     if u.reg_read(UC_ARM_REG_PC)!=stop:raise ValueError('Initializer did not return normally')
+    u.hook_del(code_hook)
+    return u,image
+
+
+def extract():
+    u,image=initialized_tables()
     def records(address,count):
         rows=[]
         for index in range(count):
@@ -53,7 +60,7 @@ def extract():
         name=image[0x2915c+16*index:0x2915c+16*(index+1)].split(b'\0')[0].decode('ascii')
         perform.append({'table_index':index,'name':name,'remote_selectable':False,
                         'menu_label':{0:None,2:'Strum 2 Octaves',8:None}.get(index,name),
-                        'note':{0:'Off state label, not the menu Exit item.',8:'Internal label; not present in the inspected normal Perform menu.'}.get(index,'Physical Perform mode; incoming setter not established.')})
+                        'note':{0:'Off state label, not the menu Exit item.',8:'Internal label; not present in the inspected normal Perform menu.'}.get(index,'Physical Perform mode; independent setter not established. See perform-options for preset recall.')})
     assert [r['name'] for r in perform]==['Off','Strum','Strum 2 Oct','Slop','Arpeggiate','Arp 2 Octaves','Pattern','Harp','Two Note']
     js=(ROOT/'research/pistil-embedded.js').read_text()
     fx={key:[{'raw':i,'name':name,'remote_selectable':True} for i,name in enumerate(json.loads(re.search(rf'{key}:(\[[^\]]+\])',js.split('cB={',1)[1]).group(1)))] for key in ['fx1','fx2']}
@@ -62,7 +69,7 @@ def extract():
             'sound':sound,'bass':bass,'perform':perform,**fx,
             'notes':['Preset numbers are 1-based; MIDI indices are 0-based.',
                      'User Sound names are default slot labels, not a readback of customized hardware names.',
-                     'Perform table indices are NOT MIDI setter values. No remote Perform setter was found.',
+                     'Perform table indices are NOT MIDI setter values. No independent Perform setter was found; perform-options lists the preset-recall workaround.',
                      'Off and Two Note are internal state labels, not additional verified selectable menu entries.']}
 
 

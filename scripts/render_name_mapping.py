@@ -16,7 +16,7 @@ for category,start,end,title in [('sound',0,70,'Factory Sounds'),('sound',70,100
     for row in data[category][start:end]:lines += [f"| {row['name']} | {row['number']:03} | {row['midi_index']} |"]
     lines += ['']
 lines += ['## Perform labels — reference only','',
-          '**No working remote Perform setter has been established.** These indices identify entries in the firmware’s internal 16-byte label table, not SysEx values or CC setters. `orchid-midi perform ...` continues to refuse transmission. CC 103/104 reports were not symmetric incoming controls.','',
+          '**No independent remote Perform setter has been established.** A [preset-recall workaround](perform.md) is now hardware-confirmed; use `perform-options` for its factory combinations. These indices identify entries in the firmware’s internal 16-byte label table, not SysEx values or CC setters. `orchid-midi perform ...` continues to refuse transmission. CC 103/104 reports were not symmetric incoming controls.','',
           '| Internal label | Table index | Physical menu label / interpretation |','|---|---:|---|']
 for row in data['perform']:
     lines += [f"| {row['name']} | {row['table_index']} | {row['menu_label'] or row['note']} |"]
@@ -32,5 +32,5 @@ lines += ['','Reverb is separate: `REVSEND` (send), `REVSIZE` (size), `REVLP` (l
           '- Reproduce preset order and labels: `research/extract_preset_catalog.py` (optional Unicorn dependency, offline only). Firmware SHA-256: `'+data['firmware_sha256']+'`.',
           '- Initializer 0x0803DBA4 writes Sound records at 0x24048100 and Bass records at 0x24047F20, stride 40. Perform labels start at 0x0804915C, stride 16.',
           '- Sound 001/002 and Bass 007/008 match the captured physical checks. Other slot/name mappings are firmware-derived, not individually verified on hardware.',
-          '- Names do not expand supported commands: no remote Perform/Loop/BPM control or maintenance operation is enabled by this catalog.','']
+          '- Names do not expand supported commands: no independent Perform setter, Loop/BPM control or maintenance operation is enabled by this catalog.','']
 (ROOT/'references/names.md').write_text('\n'.join(lines))

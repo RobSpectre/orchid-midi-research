@@ -1,6 +1,6 @@
 # Control map
 
-Hardware status through October 1, 2026. The 0.2.0 Python CLI adds a broader static parameter catalog; see [CLI reference](cli.md). Firmware display v3.9.2, identity interpreted as 3.92; Pistil 1.0.2. Evidence is local to this version and instrument.
+Hardware status through October 2, 2026. The 0.2.0 Python CLI adds a broader static parameter catalog; see [CLI reference](cli.md). Firmware display v3.9.2, identity interpreted as 3.92; Pistil 1.0.2. Evidence is local to this version and instrument.
 
 ## Verified controls
 
@@ -48,3 +48,7 @@ Loop menu: Exit, Free, 1/2/4/8/16 bars. A disposable one-bar loop was recorded, 
 Negative live tests: FC/FA button-pair replay; Start with 24-PPQN clock at 87 BPM; Continue with that clock; MMC Play and Deferred Play; MIDI Stop while Disco played. None controlled the drums. MIDI clock F8 continued while drums were silent, so clock is not a playback indicator. At 87 BPM it is about 34.8 pulses/second.
 
 Legacy bounded `probe-*` transport/report packet builders remain offline research, but the 0.2.0 portable CLI does not expose them as live controls. Its unsupported-operation commands explain the recorded failures without sending MIDI. Maintenance remains disabled after its live failure.
+
+## Perform preset-recall confirmation (October 2)
+
+Remote Sound selection of Neighbour changed Perform to Arpeggiate 02. Applying all 134 writable Pulsar factory voice parameters preserved Arpeggiate 02 while changing the timbre to Pulsar. Restoring the actual Pulsar preset returned Perform to Pattern 07; the owner confirmed each step. This is a limited preset-based workaround, not a dedicated mode/amount setter. See [Perform workflow and all factory combinations](perform.md).

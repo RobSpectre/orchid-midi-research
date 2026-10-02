@@ -9,7 +9,7 @@ description: Install and use the cross-platform Python orchid-midi CLI to contro
 
 ## Install once, then use
 
-From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.2.1 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
+From this skill folder run `python -m pip install .`, or `pipx install .` / `uv tool install .` for an isolated environment. Do not repeat installation when `orchid-midi --version` already shows 0.3.0 or later. If the executable is not on PATH, use `python -m orchid_midi_cli` in the environment where it was installed. Read [INSTALL.md](INSTALL.md) for exact port configuration and OS prerequisites.
 
 ```sh
 orchid-midi ports
@@ -22,7 +22,7 @@ The backend is python-rtmidi: CoreMIDI on macOS, ALSA/JACK on Linux, WinMM on Wi
 
 ## Select by name
 
-Read [the explicit name mappings](references/names.md) for all 70 factory Sounds, 30 default user-slot labels, 12 Bass presets, Perform labels and FX types. Prefer names to integers: `orchid-midi sound "Ghost"`, `orchid-midi bass "Fuzzy"`. `orchid-midi presets sound` (or `names sound`) lists the bundled mapping without accessing the device. Name selection also works in JSON profiles. Perform labels are reference-only; their table indices are not MIDI commands.
+Read [the explicit name mappings](references/names.md) for all 70 factory Sounds, 30 default user-slot labels, 12 Bass presets, Perform labels and FX types. Prefer names to integers: `orchid-midi sound "Ghost"`, `orchid-midi bass "Fuzzy"`. `orchid-midi presets sound` (or `names sound`) lists the bundled mapping without accessing the device. Name selection also works in JSON profiles. Perform table indices are not MIDI commands; use the preset-recall workflow below for known combinations.
 
 ## Control
 
@@ -42,6 +42,10 @@ Read [CLI reference](references/cli.md) for every command, configuration schema,
 
 The CLI validates all writes before opening MIDI and emits JSON. A `sent` event is not a hardware confirmation. Query responses are matched to their request; most DSP parameter writes have no implemented readback. `status` reads identity, selected presets and voicings, **not a full backup**. JSON profiles are explicit desired settings, not snapshots captured from the device.
 
+## Perform workaround
+
+Read [Perform through preset recall](references/perform.md). `orchid-midi perform-options` lists known factory mode/amount combinations. `orchid-midi perform-preset "Neighbour" --timbre "Pulsar"` recalls Arpeggiate 02, then applies Pulsar’s factory synth/FX values; this sequence was confirmed on hardware. The selected slot/name remains Neighbour. Factory timbre application replaces Sound edits; it is not a live-state backup. Only stored factory combinations are available, and direct `perform MODE AMOUNT` remains unsupported. Establish a baseline and use `--dry-run` before a new sequence.
+
 ## Evidence and boundaries
 
 - [Control map](references/control-map.md): physically verified examples and negative tests. Expanded CLI controls also include statically mapped parameters; do not claim all were tested on hardware.
@@ -50,6 +54,6 @@ The CLI validates all writes before opening MIDI and emits JSON. A `sent` event 
 - [Maintenance incident](references/maintenance-incident.md): an emulated function-call test caused a loud tone on hardware. Maintenance, flash writes and raw replay remain unavailable in the CLI. Never bypass that exclusion as troubleshooting.
 - [Evidence index](references/evidence-index.md): original captures and static-analysis artifacts. Older notes describe previous stages and may be superseded by these instructions.
 
-Perform, Key, Loop, BPM, Options, drum transport and master Volume have no established incoming setters. The CLI rejects them with explanations. Voice GAIN and RPVOL are not master Volume. Outgoing reports do not prove incoming control. Bass enable and FX lock are **toggles**, not absolute booleans; never retry them automatically after a timeout. Persistent preset saving and bulk maintenance are research-only, not configuration commands.
+Independent Perform, Key, Loop, BPM, Options, drum transport and master Volume have no established incoming setters. Perform has the limited preset-recall route above. The CLI rejects them with explanations. Voice GAIN and RPVOL are not master Volume. Outgoing reports do not prove incoming control. Bass enable and FX lock are **toggles**, not absolute booleans; never retry them automatically after a timeout. Persistent preset saving and bulk maintenance are research-only, not configuration commands.
 
 For new research, use `listen` or an available native computer-use tool with Pistil/MIDI Monitor. Preserve captures and distinguish UI state, traffic and physical observation. Never replay an entire capture or firmware blob. Unexpected sustained audio or device failure ends the live test: preserve evidence and ask the owner about recovery before further hardware work.

@@ -32,7 +32,7 @@ orchid-midi apply profile.json --dry-run
 orchid-midi apply profile.json
 ```
 
-Recorded examples verified presets, Sound FX and voicing physically. The wider catalog is extracted from Pistil's parameter table and firmware receiver; it is not all hardware-tested. **Perform, Key, Loop, BPM, Options, drum transport and master Volume still have no established remote setter.** The CLI explains and refuses those operations instead of guessing a command.
+Recorded examples verified presets, Sound FX and voicing physically. The wider catalog is extracted from Pistil's parameter table and firmware receiver; it is not all hardware-tested. **Independent Perform, Key, Loop, BPM, Options, drum transport and master Volume setters remain unresolved.** Perform now has a confirmed preset-recall workaround, described below. The CLI explains and refuses those operations instead of guessing a command.
 
 The failed maintenance diagnostic remains blocked; no raw replay, flash or maintenance API is included. Read the [incident record](skills/orchid-midi/references/maintenance-incident.md).
 
@@ -60,3 +60,7 @@ Tests use captured bytes and simulated native MIDI ports, including names/APIs f
 ## Research assets
 
 This private archive includes original captures, vendor firmware/frontend assets and generated disassembly. They retain historical metadata and third-party ownership. No public redistribution license is asserted; review [THIRD_PARTY.md](THIRD_PARTY.md) before making the full archive public. Installed dependencies, credentials, build products and Python caches are excluded from Git and the skill ZIP.
+
+### Perform preset workaround
+
+`orchid-midi perform-preset "Neighbour" --timbre "Pulsar"` applies Arpeggiate 02 with Pulsar’s factory sound. This sequence was confirmed on the instrument. The selected slot/name stays Neighbour, and factory timbre application replaces current Sound edits. `perform-options` lists known factory combinations; arbitrary independent mode/amount control remains unresolved. See [Perform workflow](skills/orchid-midi/references/perform.md).
