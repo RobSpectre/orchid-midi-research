@@ -6,3 +6,5 @@ vendor/
 dist/
 .env
 .env.*
+build/
+*.egg-info/

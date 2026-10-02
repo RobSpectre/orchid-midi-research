@@ -17,3 +17,7 @@ All paths below are relative to the skill root. Original capture files remain un
 `.mmon` is the original MIDI Monitor archive; `.jsonl` is decoded or directly captured traffic; `.syx` is binary SysEx evidence. Never feed an entire evidence file to the instrument. Clock-heavy captures are deliberately retained to preserve timing context.
 
 `evidence-manifest.json` contains sizes and SHA-256 hashes for captures and reference firmware/frontend assets at packaging. Machine-specific `research/vendor/` dependencies and Python caches are excluded. Install optional dependencies from `requirements-research.txt` instead.
+
+## Portable parameter catalog
+
+`src/orchid_midi_cli/parameters.json` contains135 named parameter records and source provenance. `research/extract_parameter_catalog.py` reproduces it from the hash-matched installed Pistil binary; no vendor binary is needed to use the CLI. `tests/test_cli.py` checks captured packet equivalence, every named range, profiles, endpoint selection, reply matching, cleanup and blocked operations. The old `research/orchid_midi.py` command entry point now delegates to this same portable implementation.

@@ -15,4 +15,4 @@ Evidence:
 
 The emulator modeled the parser, checksum, unpacking, gate, indirect call and response formatter. It did not model all live MPU/cache/interrupt/peripheral state. Matching a version identity also does not establish binary identity with the downloaded image. These are limitations, not a diagnosed cause.
 
-The live CLI now rejects `probe-stock-service` before loading CoreMIDI, including with `--dry-run`. The historical packet builder exists solely so researchers can reproduce the emulator and analyze the failure offline. Never use it as a remote control primitive, and never replay the diagnostic capture or firmware blob. A regression test verifies that the disabled command fails before device access.
+The live CLI now rejects `probe-stock-service` before importing or opening the native MIDI backend, including with `--dry-run`. The historical packet builder exists solely so researchers can reproduce the emulator and analyze the failure offline. Never use it as a remote control primitive, and never replay the diagnostic capture or firmware blob. A regression test verifies that the disabled command fails before device access.

@@ -14,7 +14,9 @@ def main():
     with ZipFile(destination, "w", compression=ZIP_DEFLATED) as archive:
         for path in sorted(SKILL.rglob("*")):
             relative = path.relative_to(SKILL)
-            if any(part in {"vendor", "__pycache__", ".venv", ".git"} for part in relative.parts):
+            if any(part in {"vendor", "__pycache__", ".venv", ".git", "build", "dist"} for part in relative.parts):
+                continue
+            if any(part.endswith(".egg-info") for part in relative.parts):
                 continue
             if not path.is_file() or path.name == ".DS_Store" or path.suffix in {".pyc", ".pyo"}:
                 continue

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orchid-midi-research"
+version = "0.2.0"
+description = "Portable Python CLI for researched Telepathic Orchid USB MIDI controls"
+requires-python = ">=3.10"
+dependencies = ["python-rtmidi>=1.5.8,<2"]
+
+[project.scripts]
+orchid-midi = "orchid_midi_cli.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["skills/orchid-midi/src"]
+
+[tool.setuptools.package-data]
+orchid_midi_cli = ["parameters.json"]

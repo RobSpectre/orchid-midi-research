@@ -45,3 +45,11 @@ Reproduce the native audit with `python3 research/audit_pistil_native.py /path/t
 No remote solution has been established for all panel dials. Useful future work is offline: inspect state transitions and protocol dispatch, compare version-matched binaries, or obtain a manufacturer-supported control specification. The exact Disco report sequence remains untested incoming, but its individual components and several transport mechanisms already failed. Do not represent further permutations as likely solutions without new evidence.
 
 Maintenance commands 71/72/73 and display/boot routes were traced as research. The sole live 73 test failed audibly; see the incident record. This evidence takes precedence over the earlier successful emulator report.
+
+## Portable CLI catalog (0.2.0)
+
+`research/extract_parameter_catalog.py` verifies the original Pistil binary SHA-256, reads the x86_64 Parinfo table at0x10092D130 (135 records, stride24), and extracts name, label, raw minimum/maximum and default. Names and known FX indices were checked against captured packets; enum labels come from the saved frontend. The generated catalog is bundled in `src/orchid_midi_cli/parameters.json`. Runtime installation does not need the proprietary binary.
+
+The native `pushParamToHardware` function scans the same135 records to resolve an index and sends command47. Firmware accepts voice indices0–134, global0–35, and the deeper drum setter implements indices0–52. The new CLI exposes those ranges with separate evidence labels. Metadata VER is not writable. Sound selector0x08035118 bounds zero-based0–99; Bass command3F at0x0804621C bounds0–11. Bass43 and FX-lock48 call toggle functions independent of their payload, so the CLI offers only explicit toggles.
+
+Static mapping is not additional physical testing. The original failed maintenance probe remains blocked, and no new device parameter writes were used to package the portable CLI.

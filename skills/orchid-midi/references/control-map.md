@@ -1,6 +1,6 @@
 # Control map
 
-Status through the October 1, 2026 hardware session; packaged October 2. Firmware display v3.9.2, identity interpreted as 3.92; Pistil 1.0.2. Evidence is local to this version and instrument.
+Hardware status through October 1, 2026. The 0.2.0 Python CLI adds a broader static parameter catalog; see [CLI reference](cli.md). Firmware display v3.9.2, identity interpreted as 3.92; Pistil 1.0.2. Evidence is local to this version and instrument.
 
 ## Verified controls
 
@@ -22,7 +22,7 @@ These are verified example values, not exhaustive testing of each accepted range
 
 Reverb restoration recovered the original displayed step 03, not its unknown original raw sub-step. Reloading ORCHID EP did not restore the displayed reverb during the experiment. Pistil UI can remain stale after direct commands; it once showed a different Bass preset than the hardware.
 
-Read-only queries: `query-sound` (51), `query-bass` (53), `query-chord-voicing` (52), `query-bass-voicing` (55). Sound/Bass queries return slot/name, not a complete parameter backup. Voicing replies observed as `F0 00 22 0C 01 7E 52 18 F7` and `... 55 17 F7`; their last data byte is the value, not a checksum.
+Read-only queries: `query-sound` (51), `query-bass` (54; legacy 53 refresh is available as `query bass-refresh`), `query-chord-voicing` (52), `query-bass-voicing` (55). Sound/Bass queries return slot/name, not a complete parameter backup. Voicing replies observed as `F0 00 22 0C 01 7E 52 18 F7` and `... 55 17 F7`; their last data byte is the value, not a checksum.
 
 Identity request: `F0 7E 7F 06 01 F7`. Observed reply: `F0 7E 7F 06 02 00 22 0C 01 01 00 00 33 2E 09 02 F7`. Identity version matching does not authenticate the full firmware image.
 
@@ -47,4 +47,4 @@ Loop menu: Exit, Free, 1/2/4/8/16 bars. A disposable one-bar loop was recorded, 
 
 Negative live tests: FC/FA button-pair replay; Start with 24-PPQN clock at 87 BPM; Continue with that clock; MMC Play and Deferred Play; MIDI Stop while Disco played. None controlled the drums. MIDI clock F8 continued while drums were silent, so clock is not a playback indicator. At 87 BPM it is about 34.8 pulses/second.
 
-The CLI retains bounded `probe-*` transport/report experiments for reproducibility, clearly marked as unsupported setters. They are not part of the verified-control workflow. The maintenance probe is separately disabled after a live failure.
+Legacy bounded `probe-*` transport/report packet builders remain offline research, but the 0.2.0 portable CLI does not expose them as live controls. Its unsupported-operation commands explain the recorded failures without sending MIDI. Maintenance remains disabled after its live failure.

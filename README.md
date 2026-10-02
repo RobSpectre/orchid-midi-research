@@ -1,43 +1,58 @@
-# Orchid USB MIDI research
+# Orchid MIDI — portable Python CLI and agent skill
 
-A portable agent skill and reproducible research archive for Telepathic Orchid and Pistil. Verified remote controls cover Sound/Bass presets, Reverb, Filter, Phaser/Chorus amounts and chord/bass voicing. **Perform, Key, Loop, BPM, Options and master Volume remain unresolved.**
-
-The last live maintenance diagnostic caused a loud sustained tone and the owner rebooted the instrument. The sender now blocks that operation. The failure is preserved alongside the earlier emulator results; emulation did not prove live safety.
-
-## Use with an agent harness
-
-Copy the entire [`skills/orchid-midi`](skills/orchid-midi) folder into your harness's skill directory. Its [`SKILL.md`](skills/orchid-midi/SKILL.md) uses plain Markdown with `name` and `description` frontmatter and relative links. No Codex SDK, account, MCP server or absolute workspace path is required.
-
-If your harness does not discover SKILL.md files, explicitly instruct it: “Read `/path/to/orchid-midi/SKILL.md` and use its references for this task.” Native computer-use tools are optional for Pistil/MIDI Monitor interaction. Tool availability and permissions remain the harness's responsibility.
-
-From this repository:
+Install once to control the researched Telepathic Orchid USB MIDI interface on **macOS, Linux or Windows**. The CLI uses python-rtmidi directly: no `amidi`, platform shell commands or Pistil app needed.
 
 ```sh
-python3 skills/orchid-midi/research/orchid_midi.py reverb 38 --dry-run
-python3 -m unittest discover -s skills/orchid-midi/research -p test_protocol.py -v
-python3 scripts/package_skill.py
+pipx install .
+orchid-midi ports
+orchid-midi filter 25
+orchid-midi set sound FX1TYPE PHASER
+orchid-midi set sound FX1P2 63
+orchid-midi set bass MODEL "REED PIANO"
+orchid-midi chord-voicing 36
 ```
 
-The last command produces `dist/orchid-midi.zip` with one self-contained `orchid-midi/` folder. Extract and copy that folder to another harness. The package includes the historical captures and offline evidence, so it is larger than an instructions-only skill.
+Alternatively use `python -m pip install .` in a virtual environment or `uv tool install .`. Python3.10+ is required. Releases include a small installable wheel and the complete portable skill ZIP. The installer fetches the native MIDI dependency for your platform; an unusual platform without a dependency wheel may require build libraries. Linux needs ALSA sequencer access; see [installation](skills/orchid-midi/INSTALL.md).
 
-## Requirements and validation
+## What it exposes
 
-Python 3.10+ suffices for protocol construction, capture decoding and the live sender. **Live MIDI requires macOS CoreMIDI.** Offline tools work independently of the device; a Linux/Windows live backend has not been implemented. `ORCHID_PYTHON=/path/to/python3 ./orchid-midi …` selects another runtime.
-
-Optional firmware analysis:
+- All135 Sound/Bass parameter entries by name and raw range:134 configurable settings per voice plus read-only version metadata. Oscillators, envelopes, LFOs, modulation routes, filters, effects/reverb, VA/FM/Reed Piano options.
+- Sound presets1–100, Bass presets1–12, chord/bass voicing; bass-enable and FX-lock toggles.
+- Firmware-bounded indexed drum/global DSP parameters, standard voice MIDI controls and bounded note playback.
+- Identity, preset/voicing queries, passive JSONL capture, automatic port selection and saved endpoint preferences.
+- Validated JSON configuration files, dry runs, enum names, raw/normalized/percent values, machine-readable capabilities.
 
 ```sh
-python3 -m venv .venv
-.venv/bin/python -m pip install -r skills/orchid-midi/requirements-research.txt
-.venv/bin/python -m unittest discover -s skills/orchid-midi/research -v
+orchid-midi parameters --engine sound --filter FX
+orchid-midi capabilities
+orchid-midi status
+orchid-midi apply profile.json --dry-run
+orchid-midi apply profile.json
 ```
 
-The Unicorn emulator is an optional forensic tool; it is not run by the normal test suite and can be restricted by JIT/memory-execution sandboxes. Never treat its success as permission to send maintenance packets.
+Recorded examples verified presets, Sound FX and voicing physically. The wider catalog is extracted from Pistil's parameter table and firmware receiver; it is not all hardware-tested. **Perform, Key, Loop, BPM, Options, drum transport and master Volume still have no established remote setter.** The CLI explains and refuses those operations instead of guessing a command.
 
-Read the [control map](skills/orchid-midi/references/control-map.md), [research trace](skills/orchid-midi/references/research-trace.md), [incident](skills/orchid-midi/references/maintenance-incident.md) and [evidence index](skills/orchid-midi/references/evidence-index.md). Tests are offline and do not prove hardware behavior beyond the recorded physical observations.
+The failed maintenance diagnostic remains blocked; no raw replay, flash or maintenance API is included. Read the [incident record](skills/orchid-midi/references/maintenance-incident.md).
 
-## Archive and third-party materials
+## Agent installation
 
-Original session captures, downloaded firmware/frontend assets and generated disassembly are retained for research reproducibility. They may contain historical local paths and timing metadata. Vendor binaries/frontend assets remain third-party materials; no redistribution license is asserted for them. This initial repository is private. No open-source license has been assigned to the original research yet. Review those materials and licensing before public redistribution.
+Copy the full [`skills/orchid-midi`](skills/orchid-midi) folder into any harness's skill directory and install its Python package once (`pipx install /path/to/orchid-midi`). If the harness does not discover skills, point it at [`SKILL.md`](skills/orchid-midi/SKILL.md). The skill explicitly requires the Python CLI for all device operations and prohibits falling back to shell MIDI commands. Both the repository root and the standalone extracted skill folder are installable.
 
-See [`THIRD_PARTY.md`](THIRD_PARTY.md) for provenance. The package excludes installed dependencies, Python caches and credentials.
+The [CLI reference](skills/orchid-midi/references/cli.md) documents every command and the configuration schema. [The evidence index](skills/orchid-midi/references/evidence-index.md) links original captures and firmware/Pistil traces.
+
+## Offline verification and packaging
+
+```sh
+python -m pip install .
+python -m unittest discover -s skills/orchid-midi/tests -v
+python -m pip install -r skills/orchid-midi/requirements-research.txt
+python -m unittest discover -s skills/orchid-midi/research -v
+python -m pip wheel --no-deps --wheel-dir dist .
+python scripts/package_skill.py
+```
+
+Tests use captured bytes and simulated native MIDI ports, including names/APIs from macOS, Linux and Windows. They do not send to hardware. The wheel contains only CLI code and the parameter catalog; `dist/orchid-midi.zip` additionally preserves the research archive.
+
+## Research assets
+
+This private archive includes original captures, vendor firmware/frontend assets and generated disassembly. They retain historical metadata and third-party ownership. No public redistribution license is asserted; review [THIRD_PARTY.md](THIRD_PARTY.md) before making the full archive public. Installed dependencies, credentials, build products and Python caches are excluded from Git and the skill ZIP.
